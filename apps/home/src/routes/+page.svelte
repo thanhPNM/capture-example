@@ -2,7 +2,7 @@
   import { MyCounterButton, Button } from 'ui';
 </script>
 
-<h1>Web</h1>
+<h1>Home</h1>
 <MyCounterButton />
 <Button />
 
