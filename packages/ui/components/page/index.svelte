@@ -1,8 +1,8 @@
-<script>
-  import './page.css';
-  import Header from './Header.svelte';
+<script lang="ts">
+  import './styles.css';
+  import Header from '../header/index.svelte';
 
-  let user = null;
+  let user: any = null;
 </script>
 
 <article>

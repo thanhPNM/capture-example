@@ -1,5 +1,5 @@
 <script>
-  import './button.css';
+  import './styles.css';
 
   /**
    * Is this the principal call to action on the page?

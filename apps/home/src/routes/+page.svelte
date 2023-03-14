@@ -1,9 +1,8 @@
 <script lang="ts">
-  import { MyCounterButton, Button } from 'ui';
+  import { Button } from 'ui';
 </script>
 
 <h1>Home</h1>
-<MyCounterButton />
-<Button />
+<Button label="test" />
 
 <p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>

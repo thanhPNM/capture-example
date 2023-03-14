@@ -1,4 +1,6 @@
 <script lang="ts">
+  import { Button } from 'ui';
+
   let videoSource: any = null;
   let loading: boolean = false;
   let isRunning: boolean = false;
@@ -63,10 +65,11 @@
   <!-- svelte-ignore a11y-media-has-caption -->
   <video bind:this={videoSource} />
   <div class="action-area">
-    <button on:click={() => (isRunning ? closeCamera() : obtenerVideoCamera())}
-      >{isRunning ? 'CLOSE' : 'OPEN'}</button
-    >
-    <button on:click={capturePicture}>CAPTURE</button>
+    <Button
+      label={isRunning ? 'Close' : 'Open'}
+      on:click={() => (isRunning ? closeCamera() : obtenerVideoCamera())}
+    />
+    <Button label="Capture" on:click={capturePicture} />
   </div>
   <canvas bind:this={canvas} {width} {height} />
   <div class="output">
