@@ -1,6 +1,8 @@
 <script lang="ts">
   import { Button } from 'ui';
+  import { doSomething } from './index';
 
+  doSomething();
   let videoSource: any = null;
   let loading: boolean = false;
   let isRunning: boolean = false;

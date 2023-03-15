@@ -1,11 +1,10 @@
-<script>
-  import './styles.css';
-  import Button from '../button/index.svelte';
-
+<script lang="ts">
   import { createEventDispatcher } from 'svelte';
+  import Button from '../button/index.svelte';
+  import './styles.css';
 
-  export let user = null;
-
+  export let user: { name: string } = null;
+  export let page: any = null;
   const dispatch = createEventDispatcher();
 
   function onLogin(event) {
@@ -37,6 +36,19 @@
       </svg>
       <h1>Acme</h1>
     </div>
+    <nav>
+      <ul>
+        <li aria-current={$page.url.pathname === '/' ? 'page' : undefined}>
+          <a href="/">Home</a>
+        </li>
+        <li aria-current={$page.url.pathname === '/about' ? 'page' : undefined}>
+          <a href="/about">About</a>
+        </li>
+        <li aria-current={$page.url.pathname.startsWith('/camera') ? 'page' : undefined}>
+          <a href="/camera">Camera</a>
+        </li>
+      </ul>
+    </nav>
     <div>
       {#if user}
         <span class="welcome">
@@ -50,3 +62,14 @@
     </div>
   </div>
 </header>
+
+<style>
+  nav ul {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+  }
+  a {
+    text-decoration: none;
+  }
+</style>

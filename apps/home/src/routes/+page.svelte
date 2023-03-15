@@ -2,7 +2,11 @@
   import { Button } from 'ui';
 </script>
 
-<h1>Home</h1>
+<svelte:head>
+  <title>Home</title>
+  <meta name="description" content="Svelte demo app" />
+</svelte:head>
+
 <Button label="test" />
 
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<a href="/about">Go to about page</a>
