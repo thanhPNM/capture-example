@@ -9,4 +9,20 @@
 
 <Button label="test" />
 
+<div class="green">
+  This is div!
+  <span>This is span!</span>
+</div>
 <a href="/about">Go to about page</a>
+
+<style lang="scss">
+  div {
+    color: red;
+    & .green {
+      color: green;
+    }
+    span {
+      color: blue;
+    }
+  }
+</style>
