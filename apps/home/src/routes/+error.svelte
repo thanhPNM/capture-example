@@ -2,11 +2,11 @@
   // @ts-nocheck
   import { page } from '$app/stores';
 
-  const DEFAULT_MESSAGE = 'Something wrong here.';
+  const DEFAULT_MESSAGE = 'This boat is broken! Wait a minute, our cool crew is fixing it';
   const errorContents = {
     404: {
-      emoji: '👻',
-      message: 'Oops! The page you are searching is not existed.'
+      emoji: '🌊',
+      message: 'Oops! It seems like you are lost in the ocean...'
     },
     420: {
       emoji: '🫠',
@@ -20,15 +20,18 @@
 </script>
 
 <div class="error-page">
-  <h1>{$page.status}</h1>
-  <h2>{$page.error?.message}</h2>
-
-  <span>
+  <h1>{$page.status} Error</h1>
+  <h2>
     {errorContents[$page.status] ? errorContents[$page.status].message : errorContents[500].message}
-  </span>
-  <span class="emoji">
+  </h2>
+
+  <p class="emoji">
     {errorContents[$page.status] ? errorContents[$page.status].emoji : errorContents[500].emoji}
-  </span>
+  </p>
+
+  {#if $page.status === 404}
+    <a href="/" alt="Go to homepage">Take me back to the land</a>
+  {/if}
 </div>
 
 <style lang="scss">
@@ -49,15 +52,17 @@
   h2 {
     font-size: 3.5rem;
     font-weight: 600;
-    color: #333333;
-    margin-bottom: 1em;
+    color: var(--primary-text-color);
+    margin: 0.5em 0 1em;
   }
 
-  span {
-    font-size: 2rem;
-    font-weight: 300;
-    color: #333333;
-    margin: 0.5rem 0;
+  a {
+    color: var(--secondary-color);
+    font-size: 1.5em;
+    font-weight: 400;
+    &:hover {
+      color: var(--primary-color);
+    }
   }
   .emoji {
     font-size: 8rem;

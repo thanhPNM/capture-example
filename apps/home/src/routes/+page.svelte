@@ -9,9 +9,11 @@
   let error: string = '';
 
   onMount(() => {
-    const cachedSessions = JSON.parse(localStorage.getItem('session_list'));
+    const cachedSessions = localStorage.getItem('session_list');
+
     if (cachedSessions) {
-      sessions.set(cachedSessions);
+      const parsedCachedSessions = cachedSessions ? JSON.parse(cachedSessions) : [];
+      sessions.set(parsedCachedSessions);
     }
   });
 
@@ -67,12 +69,16 @@
 
 <div class="home-container">
   <!-- svelte-ignore a11y-autofocus -->
-  <div class="input-wrapper">
+  <div class="input-wrapper form-control w-full max-w-lg">
+    <!-- svelte-ignore a11y-label-has-associated-control -->
+    <label class="label">
+      <span class="label-text">Sesson ID</span>
+    </label>
     <input
       id="session-id"
       type="text"
-      placeholder="Enter ID Here"
-      class="input input-bordered input-lg w-full max-w-lg"
+      placeholder="Fill in where you wanna go"
+      class="input input-bordered input-lg"
       autofocus
       maxlength="20"
       bind:value={sessionId}
@@ -82,7 +88,7 @@
       }}
     />
     {#if error}
-      <div class="error-text">{error}</div>
+      <div class="error-text" transition:slide|local>{error}</div>
     {/if}
   </div>
 
@@ -92,7 +98,9 @@
         {#each $sessions as session, i}
           <li class={session.active ? 'active' : 'inactive'} transition:slide|local>
             <a href={`/id/${session.id}`} target="_blank">{i + 1}. {session.id}</a>
-            <span on:click={() => inactiveSession(session.id)}>Kill it</span>
+            {#if session.active}
+              <button on:click={() => inactiveSession(session.id)}>Kill it</button>
+            {/if}
           </li>
         {/each}
       </ul>
@@ -116,11 +124,21 @@
       margin-bottom: 5em;
       width: 30%;
 
+      .label-text {
+        color: var(--primary-text-color);
+        font-size: 1.2em;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+        margin-bottom: 0.2em;
+      }
+
       input {
-        border-color: #19a7ce;
+        border-color: var(--primary-color);
         margin-bottom: 10px;
+        font-weight: 600;
+        letter-spacing: 0.5px;
         &:focus {
-          outline: 2px solid rgba(25, 167, 206, 0.8);
+          outline: 2px solid var(--primary-color);
         }
       }
 
@@ -138,30 +156,36 @@
       box-sizing: border-box;
       font-size: 20px;
       margin: 0.5em 0;
-      width: 20em;
+      width: 24em;
       display: flex;
       justify-content: space-between;
       align-items: center;
 
-      &.active {
-        color: green;
+      a {
+        font-size: 1.2em;
+        font-weight: 600;
+        letter-spacing: 0.5px;
       }
-      &.inactive {
-        color: red;
+
+      &.active a {
+        color: var(--primary-text-color);
+      }
+      &.inactive a {
+        color: var(--grey);
         text-decoration: line-through;
       }
     }
 
-    li span {
-      padding: 0.5em 1em;
+    li button {
+      padding: 6px 16px;
       cursor: pointer;
-      background-color: #19a7ce;
+      background-color: var(--primary-color);
       border-radius: 8px;
       color: white;
       margin-left: 1em;
       text-decoration: none;
       &:hover {
-        background-color: #146c94;
+        background-color: var(--secondary-color);
       }
     }
   }

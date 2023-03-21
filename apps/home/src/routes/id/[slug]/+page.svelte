@@ -36,9 +36,9 @@
 <div class="session-container">
   <h1>Session id: <span>{data.id}</span></h1>
   {#if session?.active}
-    <h2>This session is active</h2>
+    <h2>This session is <strong>active</strong></h2>
   {:else if session?.active === false}
-    <h2 class="inactive">This session is not active anymore.</h2>
+    <h2 class="inactive">This session is <strong>not active</strong> anymore.</h2>
   {/if}
 </div>
 
@@ -49,15 +49,16 @@
     text-align: center;
 
     h1 {
-      color: #146c94;
+      color: var(--primary-text-color);
       font-size: 2rem;
+      margin-bottom: 0.5em;
       span {
         font-weight: bold;
       }
     }
 
     h2 {
-      color: #19a7ce;
+      color: var(--primary-text-color);
       font-size: 1.5rem;
       &.inactive {
         color: red;

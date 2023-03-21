@@ -5,7 +5,4 @@ export interface ISession {
     active: boolean;
 }
 
-export const sessions = writable<ISession[]>([], () => {
-    console.log('got a subscriber');
-    return () => console.log('no more subscribers');
-})
+export const sessions = writable<ISession[]>([]);

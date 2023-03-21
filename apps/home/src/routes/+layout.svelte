@@ -1,5 +1,6 @@
 <script lang="ts">
   import '../app.postcss';
+  import '../global.scss';
 </script>
 
 <div class="wrapper">
@@ -11,6 +12,10 @@
     height: 100vh;
     display: flex;
     flex-direction: column;
-    background-color: #f6f1f1;
+    background-image: linear-gradient(
+      to bottom right,
+      var(--background-color) 20%,
+      var(--primary-color)
+    );
   }
 </style>
