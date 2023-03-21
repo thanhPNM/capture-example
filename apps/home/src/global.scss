@@ -1,13 +1,10 @@
+@import 'themes.scss';
+
 :root {
-    --background-color: #F9F5EB;
-    --primary-color: #E4DCCF;
-    --secondary-color: #EA5455;
-    --primary-text-color: #002B5B;
     --grey: #F6F1F1:var(--grey);
     --black: #000000;
     --grey-text-color: #333333;
     --error-text-color: darkred;
-
   }
   
   body {

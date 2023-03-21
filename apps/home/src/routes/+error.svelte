@@ -52,16 +52,17 @@
   h2 {
     font-size: 3.5rem;
     font-weight: 600;
-    color: var(--primary-text-color);
+    color: var(--theme-on-primary);
     margin: 0.5em 0 1em;
   }
 
   a {
-    color: var(--secondary-color);
+    color: var(--theme-on-primary);
     font-size: 1.5em;
     font-weight: 400;
     &:hover {
-      color: var(--primary-color);
+      color: var(--theme-primary);
+      opacity: 0.9;
     }
   }
   .emoji {

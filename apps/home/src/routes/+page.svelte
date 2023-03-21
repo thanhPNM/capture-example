@@ -125,7 +125,7 @@
       width: 30%;
 
       .label-text {
-        color: var(--primary-text-color);
+        color: var(--theme-on-primary);
         font-size: 1.2em;
         font-weight: 600;
         letter-spacing: 0.5px;
@@ -133,23 +133,26 @@
       }
 
       input {
-        border-color: var(--primary-color);
+        border-color: var(--theme-on-primary);
         margin-bottom: 10px;
         font-weight: 600;
         letter-spacing: 0.5px;
         &:focus {
-          outline: 2px solid var(--primary-color);
+          outline: 2px solid var(--theme-on-primary);
         }
       }
 
       .error-text {
-        color: red;
+        color: rgb(183, 8, 8);
       }
     }
 
     .sessions-list {
       overflow-y: scroll;
       padding: 2em;
+      background-color: var(--theme-surface);
+      border-radius: 16px;
+      box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
     }
 
     li {
@@ -165,13 +168,12 @@
         font-size: 1.2em;
         font-weight: 600;
         letter-spacing: 0.5px;
+        color: var(--theme-on-surface);
       }
 
-      &.active a {
-        color: var(--primary-text-color);
-      }
       &.inactive a {
         color: var(--grey);
+        opacity: 0.6;
         text-decoration: line-through;
       }
     }
@@ -179,13 +181,13 @@
     li button {
       padding: 6px 16px;
       cursor: pointer;
-      background-color: var(--primary-color);
+      background-color: var(--theme-primary);
       border-radius: 8px;
-      color: white;
+      color: var(--theme-on-primary);
       margin-left: 1em;
       text-decoration: none;
       &:hover {
-        background-color: var(--secondary-color);
+        background-color: var(--theme-secondary);
       }
     }
   }

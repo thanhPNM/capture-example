@@ -45,11 +45,12 @@
 <style lang="scss">
   .session-container {
     margin: auto;
-    padding-bottom: 10em;
     text-align: center;
-
+    background-color: var(--theme-surface);
+    border-radius: 16px;
+    padding: 5em 10em 8em;
     h1 {
-      color: var(--primary-text-color);
+      color: var(--theme-on-surface);
       font-size: 2rem;
       margin-bottom: 0.5em;
       span {
@@ -58,7 +59,7 @@
     }
 
     h2 {
-      color: var(--primary-text-color);
+      color: var(--theme-primary);
       font-size: 1.5rem;
       &.inactive {
         color: red;

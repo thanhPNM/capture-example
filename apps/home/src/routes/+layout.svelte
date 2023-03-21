@@ -14,8 +14,8 @@
     flex-direction: column;
     background-image: linear-gradient(
       to bottom right,
-      var(--background-color) 20%,
-      var(--primary-color)
+      var(--theme-primary),
+      var(--theme-secondary)
     );
   }
 </style>
