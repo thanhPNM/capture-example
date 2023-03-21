@@ -12,7 +12,9 @@
     "baseUrl": ".",
     "paths": {
       "src/*": ["src/*"],
-      "@static/*": ["src/static/*"]
+      "@static/*": ["static/*"],
+      "@utils/*": ["src/utils/*"],
+      "@store/*": ["src/store/*"]
     }
   }
 }

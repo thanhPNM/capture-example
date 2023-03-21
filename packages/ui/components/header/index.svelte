@@ -44,9 +44,9 @@
         <li aria-current={$page.url.pathname === '/about' ? 'page' : undefined}>
           <a href="/about">About</a>
         </li>
-        <li aria-current={$page.url.pathname.startsWith('/camera') ? 'page' : undefined}>
+        <!-- <li aria-current={$page.url.pathname.startsWith('/camera') ? 'page' : undefined}>
           <a href="/camera">Camera</a>
-        </li>
+        </li> -->
       </ul>
     </nav>
     <div>

@@ -1,7 +1,16 @@
 <script lang="ts">
-  import { page } from '$app/stores';
-  import { Header } from 'ui';
+  import '../app.postcss';
 </script>
 
-<Header user={{ name: 'Admin' }} {page} />
-<slot />
+<div class="wrapper">
+  <slot />
+</div>
+
+<style lang="scss">
+  .wrapper {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #f6f1f1;
+  }
+</style>
