@@ -3,7 +3,7 @@
   import { slide } from 'svelte/transition';
 
   import { sessions } from '@store/index';
-  import { validateSessionId } from '@utils/index';
+  import { validateSessionId } from 'shared-utils';
 
   let sessionId: string = '';
   let error: string = '';

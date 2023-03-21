@@ -1,0 +1,15 @@
+{
+  "name": "shared-utils",
+  "version": "0.0.0",
+  "description": "Shared utils between app",
+  "module": "src/index.ts",
+  "type": "module",
+  "license": "MIT",
+  "scripts": {
+    "lint": "prettier --check --ignore-path=../../.prettierignore && eslint *.ts*",
+    "format": "prettier --write --ignore-path=../../.prettierignore ."
+  },
+  "dependencies": {
+    "typescript": "^4.9.2"
+  }
+}

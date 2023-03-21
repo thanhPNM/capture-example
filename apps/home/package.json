@@ -14,7 +14,8 @@
     "build-storybook": "storybook build"
   },
   "dependencies": {
-    "ui": "workspace:*"
+    "ui": "workspace:*",
+    "shared-utils": "workspace:*"
   },
   "devDependencies": {
     "@storybook/addon-essentials": "^7.0.0-rc.1",

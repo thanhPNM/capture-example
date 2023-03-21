@@ -29,7 +29,7 @@
       }, 1000);
 
       setTimeout(() => {
-        goto('http://localhost:3002/');
+        goto(`http://localhost:3001/id/${existed.id}`);
       }, 3000);
     }
   });
