@@ -33,16 +33,15 @@
 
 <style lang="scss">
   .error-page {
-    margin: 6em auto 16em;
-    padding: 0 2em;
+    margin: auto;
+    padding: 0 2em 6em;
     display: flex;
     flex-direction: column;
-    align-items: center;
     text-align: center;
   }
 
   h1 {
-    font-size: 4rem;
+    font-size: 6rem;
     color: darkred;
     font-weight: 700;
   }
@@ -58,7 +57,7 @@
     font-size: 2rem;
     font-weight: 300;
     color: #333333;
-    margin: 0.5rem;
+    margin: 0.5rem 0;
   }
   .emoji {
     font-size: 8rem;
