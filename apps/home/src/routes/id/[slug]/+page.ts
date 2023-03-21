@@ -10,6 +10,7 @@ export function load({ params }: { params: { slug: string } }) {
         });
     } else {
         console.log('Calling API for session ID: ', params.slug)
+
     }
     return { id: params.slug }
 }
