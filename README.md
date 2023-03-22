@@ -64,6 +64,10 @@ capture-demo-example/
 ├── turbo.json
 └── ...
 
+### Workspaces
+
+Follow [this instruction](https://turbo.build/repo/docs/handbook/workspaces) if you need to add another app or package
+
 ## Authors
 
 - Thanh Pham
