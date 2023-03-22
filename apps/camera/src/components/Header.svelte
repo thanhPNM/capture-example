@@ -1,19 +1,18 @@
 <script lang="ts">
   import { createEventDispatcher } from 'svelte';
-  import Button from '../Button.svelte';
-  import './styles.css';
+  import { Button } from 'ui';
 
-  export let user: { name: string } = null;
+  export let user: { name: string } | null = null;
   export let page: any = null;
   const dispatch = createEventDispatcher();
 
-  function onLogin(event) {
+  function onLogin(event: any) {
     dispatch('login', event);
   }
-  function onLogout(event) {
+  function onLogout(event: any) {
     dispatch('logout', event);
   }
-  function onCreateAccount(event) {
+  function onCreateAccount(event: any) {
     dispatch('createAccount', event);
   }
 </script>
@@ -45,8 +44,8 @@
           <a href="/about">About</a>
         </li>
         <!-- <li aria-current={$page.url.pathname.startsWith('/camera') ? 'page' : undefined}>
-          <a href="/camera">Camera</a>
-        </li> -->
+            <a href="/camera">Camera</a>
+          </li> -->
       </ul>
     </nav>
     <div>
@@ -71,5 +70,34 @@
   }
   a {
     text-decoration: none;
+  }
+
+  .wrapper {
+    font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  svg {
+    display: inline-block;
+    vertical-align: top;
+  }
+
+  h1 {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 1;
+    margin: 6px 0 6px 10px;
+    display: inline-block;
+    vertical-align: top;
+  }
+
+  .welcome {
+    color: #333;
+    font-size: 14px;
+    margin-right: 10px;
   }
 </style>

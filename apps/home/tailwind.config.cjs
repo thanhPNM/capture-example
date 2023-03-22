@@ -1,12 +1,6 @@
-const config = {
-  content: ['./src/**/*.{html,js,svelte,ts}'],
+const defaultConfig = require('config/tailwind.config.cjs');
 
-  theme: {
-    extend: {}
-  },
-
-  plugins: [require('daisyui')],
-  darkMode: 'class'
+module.exports = {
+  ...defaultConfig,
+  plugins: [require('daisyui')]
 };
-
-module.exports = config;

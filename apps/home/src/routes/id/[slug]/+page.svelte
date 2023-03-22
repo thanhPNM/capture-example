@@ -28,9 +28,9 @@
         message = 'Redirecting you to camera...';
       }, 1000);
 
-      // setTimeout(() => {
-      //   goto(`http://localhost:3001/id/${existed.id}`);
-      // }, 3000);
+      setTimeout(() => {
+        goto(`http://localhost:3001/id/${existed.id}`);
+      }, 3000);
     }
   });
 </script>

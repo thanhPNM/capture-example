@@ -1,0 +1,36 @@
+<script lang="ts">
+  import classnames from 'classnames';
+
+  import './index.scss';
+  export let message: string = '';
+
+  type AlertType = 'info' | 'success' | 'warning' | 'error';
+  export let type: AlertType | null = null;
+
+  const cls = classnames({
+    alert: true,
+    'shadow-lg': true,
+    'alert-info': type === 'info',
+    'alert-success': type === 'success',
+    'alert-warning': type === 'warning',
+    'alert-error': type === 'error'
+  });
+</script>
+
+<div class={cls}>
+  <div>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      class="stroke-current flex-shrink-0 w-6 h-6"
+      ><path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+      /></svg
+    >
+    <span>{message}</span>
+  </div>
+</div>

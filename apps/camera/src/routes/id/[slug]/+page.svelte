@@ -1,5 +1,7 @@
 <script lang="ts">
+  import { page } from '$app/stores';
   import { Button } from 'ui';
+  import { Header } from '../../../components';
 
   let videoSource: any = null;
   let loading: boolean = false;
@@ -57,6 +59,7 @@
   };
 </script>
 
+<Header {page} />
 <h1>Camera Testing</h1>
 <div>
   {#if loading}

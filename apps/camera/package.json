@@ -14,8 +14,8 @@
     "build-storybook": "storybook build"
   },
   "dependencies": {
-    "ui": "workspace:*",
-    "shared-utils": "workspace:*"
+    "shared-utils": "workspace:*",
+    "ui": "workspace:*"
   },
   "devDependencies": {
     "@babel/core": "^7.21.0",
@@ -33,6 +33,7 @@
     "@sveltejs/kit": "latest",
     "@sveltejs/vite-plugin-svelte": "^2.0.3",
     "babel-loader": "^8.3.0",
+    "classnames": "^2.3.2",
     "eslint-config-custom": "workspace:*",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
