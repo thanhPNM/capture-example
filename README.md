@@ -40,7 +40,7 @@ turbo dev
 
 This will start a local development server at http://localhost:3000 and http://localhost:3001 where you can view the app and make changes.
 
-Run specific workspace:
+To run specific workspace:
 
 ```sh
 turbo dev --filter={{workspace_name}}
@@ -50,6 +50,7 @@ turbo dev --filter={{workspace_name}}
 
 The project is structured as follows:
 
+```bash
 capture-demo-example/
 ├── apps/
 │ ├── camera
@@ -63,6 +64,7 @@ capture-demo-example/
 ├── package.json
 ├── turbo.json
 └── ...
+```
 
 ### Workspaces
 
