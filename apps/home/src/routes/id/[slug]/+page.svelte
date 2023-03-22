@@ -28,9 +28,9 @@
         message = 'Redirecting you to camera...';
       }, 1000);
 
-      setTimeout(() => {
-        goto(`http://localhost:3001/id/${existed.id}`);
-      }, 3000);
+      // setTimeout(() => {
+      //   goto(`http://localhost:3001/id/${existed.id}`);
+      // }, 3000);
     }
   });
 </script>
@@ -55,11 +55,13 @@
 
 <style lang="scss">
   .session-container {
-    margin: auto;
+    margin: auto 2rem;
     text-align: center;
     background-color: var(--theme-surface);
     border-radius: 16px;
     padding: 5em 10em 8em;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+
     h1 {
       color: var(--theme-on-surface);
       font-size: 2rem;
@@ -81,6 +83,14 @@
       font-size: 1.2em;
       color: var(--theme-primary);
       margin: 0.5em 0;
+    }
+
+    @media screen and (max-width: 748px) {
+      padding: 2em 2em 5em;
+
+      h1 span {
+        display: block;
+      }
     }
   }
 </style>

@@ -2,6 +2,7 @@
   import { onMount } from 'svelte';
   import { slide } from 'svelte/transition';
 
+  import DeleteIcon from '@static/delete-icon.svg?component';
   import { sessions } from '@store/index';
   import { validateSessionId } from 'shared-utils';
 
@@ -99,7 +100,9 @@
           <li class={session.active ? 'active' : 'inactive'} transition:slide|local>
             <a href={`/id/${session.id}`} target="_blank">{i + 1}. {session.id}</a>
             {#if session.active}
-              <button on:click={() => inactiveSession(session.id)}>Kill it</button>
+              <button on:click={() => inactiveSession(session.id)}>
+                <DeleteIcon width={20} />
+              </button>
             {/if}
           </li>
         {/each}
@@ -110,33 +113,36 @@
 
 <style lang="scss">
   .home-container {
+    font-size: 20px;
     width: 100%;
     height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 5em;
+    padding: 5rem;
     overflow: hidden;
 
     .input-wrapper {
       justify-content: center;
       margin-bottom: 5em;
-      width: 30%;
+      font-size: 20px;
 
       .label-text {
         color: var(--theme-on-primary);
-        font-size: 1.2em;
+        font-size: 1em;
         font-weight: 600;
         letter-spacing: 0.5px;
         margin-bottom: 0.2em;
       }
 
       input {
+        font-weight: 600;
+        font-size: 20px;
+        letter-spacing: 0.5px;
         border-color: var(--theme-on-primary);
         margin-bottom: 10px;
-        font-weight: 600;
-        letter-spacing: 0.5px;
+
         &:focus {
           outline: 2px solid var(--theme-on-primary);
         }
@@ -149,17 +155,21 @@
 
     .sessions-list {
       overflow-y: scroll;
-      padding: 2em;
+      width: 100%;
+      max-width: 32rem;
+      padding: 2rem;
       background-color: var(--theme-surface);
       border-radius: 16px;
       box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+
+      ul {
+        width: 100%;
+      }
     }
 
     li {
       box-sizing: border-box;
-      font-size: 20px;
       margin: 0.5em 0;
-      width: 24em;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -188,6 +198,19 @@
       text-decoration: none;
       &:hover {
         background-color: var(--theme-secondary);
+      }
+    }
+
+    @media screen and (max-width: 748px) {
+      font-size: 18px;
+      padding: 1.2rem;
+
+      input {
+        font-size: 18px;
+      }
+
+      .sessions-list {
+        padding: 1.2rem;
       }
     }
   }

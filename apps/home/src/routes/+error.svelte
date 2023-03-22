@@ -68,4 +68,18 @@
   .emoji {
     font-size: 8rem;
   }
+
+  @media screen and (max-width: 768px) {
+    h1 {
+      font-size: 3rem;
+    }
+
+    h2 {
+      font-size: 2.2rem;
+    }
+
+    a {
+      font-size: 1.2rem;
+    }
+  }
 </style>
