@@ -1,7 +1,6 @@
 <script lang="ts">
   import classnames from 'classnames';
 
-  import './index.scss';
   export let message: string = '';
 
   type AlertType = 'info' | 'success' | 'warning' | 'error';

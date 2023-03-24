@@ -9,3 +9,11 @@ export function isMobileBrowser(): boolean {
     }
     return false
 }
+
+export const loadWebAssembly = (fileName: string) =>
+    fetch(fileName)
+        .then((response) => response.arrayBuffer())
+        .then((bits) => WebAssembly.compile(bits))
+        .then((module) => {
+            return new WebAssembly.Instance(module);
+        });

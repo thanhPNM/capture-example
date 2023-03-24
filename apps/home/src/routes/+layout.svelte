@@ -1,11 +1,20 @@
 <script lang="ts">
+  import { onMount } from 'svelte';
   import { isMobileBrowser } from 'shared-utils';
   import { Alert } from 'ui';
+  import { SimpleSDK } from '@store/index';
+
   import '../app.postcss';
   import '../global.scss';
 
   let isMobile = isMobileBrowser();
   console.log('🚀 ~ file: +layout.svelte:7 ~ isMobile:', isMobile);
+
+  onMount(() => {
+    if (typeof $SimpleSDK.add !== 'undefined') {
+      console.log();
+    }
+  });
 </script>
 
 <div class="wrapper">
@@ -26,5 +35,6 @@
       var(--theme-primary),
       var(--theme-secondary)
     );
+    padding: 8px;
   }
 </style>

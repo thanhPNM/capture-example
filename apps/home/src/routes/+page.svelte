@@ -2,9 +2,10 @@
   import { onMount } from 'svelte';
   import { slide } from 'svelte/transition';
 
-  import DeleteIcon from '@static/delete-icon.svg?component';
+  import { Button } from 'ui';
   import { sessions } from '@store/index';
   import { validateSessionId } from 'shared-utils';
+  import DeleteIcon from '@static/delete-icon.svg?component';
 
   let sessionId: string = '';
   let error: string = '';
@@ -100,9 +101,12 @@
           <li class={session.active ? 'active' : 'inactive'} transition:slide|local>
             <a href={`/id/${session.id}`} target="_blank">{i + 1}. {session.id}</a>
             {#if session.active}
-              <button on:click={() => inactiveSession(session.id)}>
+              <button class="custom-button" on:click={() => inactiveSession(session.id)}>
                 <DeleteIcon width={20} />
               </button>
+              <!-- <Button className="custom-button" on:click={() => inactiveSession(session.id)}>
+                <DeleteIcon width={20} />
+              </Button> -->
             {/if}
           </li>
         {/each}
@@ -188,7 +192,7 @@
       }
     }
 
-    li button {
+    .custom-button {
       padding: 6px 16px;
       cursor: pointer;
       background-color: var(--theme-primary);

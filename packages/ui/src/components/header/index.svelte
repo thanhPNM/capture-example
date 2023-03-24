@@ -1,7 +1,6 @@
 <script lang="ts">
   import { createEventDispatcher } from 'svelte';
   import Button from '../Button.svelte';
-  import './styles.css';
 
   export let user: { name: string } = null;
   export let page: any = null;
@@ -64,6 +63,7 @@
 </header>
 
 <style>
+  @import './styles.css';
   nav ul {
     display: flex;
     gap: 30px;

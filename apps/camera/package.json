@@ -15,7 +15,8 @@
   },
   "dependencies": {
     "shared-utils": "workspace:*",
-    "ui": "workspace:*"
+    "ui": "workspace:*",
+    "config": "workspace:*"
   },
   "devDependencies": {
     "@babel/core": "^7.21.0",

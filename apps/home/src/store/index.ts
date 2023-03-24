@@ -6,3 +6,4 @@ export interface ISession {
 }
 
 export const sessions = writable<ISession[]>([]);
+export const SimpleSDK = writable<any>({});

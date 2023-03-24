@@ -1,7 +1,5 @@
 <script lang="ts">
-  import { page } from '$app/stores';
   import { Button } from 'ui';
-  import { Header } from '../../../components';
 
   let videoSource: any = null;
   let loading: boolean = false;
@@ -59,7 +57,6 @@
   };
 </script>
 
-<Header {page} />
 <h1>Camera Testing</h1>
 <div>
   {#if loading}
@@ -68,11 +65,14 @@
   <!-- svelte-ignore a11y-media-has-caption -->
   <video bind:this={videoSource} />
   <div class="action-area">
-    <Button
-      label={isRunning ? 'Close' : 'Open'}
-      on:click={() => (isRunning ? closeCamera() : obtenerVideoCamera())}
-    />
-    <Button label="Capture" on:click={capturePicture} />
+    <Button on:click={() => (isRunning ? closeCamera() : obtenerVideoCamera())}>
+      {isRunning ? 'Close' : 'Open'}
+    </Button>
+    <Button label="Capture" on:click={capturePicture}>Capture</Button>
+    <!-- <button on:click={() => (isRunning ? closeCamera() : obtenerVideoCamera())}>
+      {isRunning ? 'Close' : 'Open'}
+    </button>
+    <button on:click={capturePicture}>Capture</button> -->
   </div>
   <canvas bind:this={canvas} {width} {height} />
   <div class="output">

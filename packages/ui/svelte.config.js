@@ -2,6 +2,7 @@ import sveltePreprocess from 'svelte-preprocess';
 
 export default {
   preprocess: sveltePreprocess({
-    scss: true
+    scss: true,
+    postcss: true
   })
 };

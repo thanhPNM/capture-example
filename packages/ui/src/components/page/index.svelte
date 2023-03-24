@@ -1,5 +1,4 @@
 <script lang="ts">
-  import './styles.css';
   import Header from '../header/index.svelte';
 
   let user: any = null;
@@ -68,3 +67,7 @@
     </div>
   </section>
 </article>
+
+<style>
+  @import './styles.css';
+</style>

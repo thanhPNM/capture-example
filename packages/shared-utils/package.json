@@ -2,7 +2,7 @@
   "name": "shared-utils",
   "version": "0.0.0",
   "description": "Shared utils between app",
-  "module": "src/index.ts",
+  "module": "index.ts",
   "type": "module",
   "license": "MIT",
   "scripts": {

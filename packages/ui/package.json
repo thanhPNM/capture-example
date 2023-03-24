@@ -3,12 +3,15 @@
   "version": "0.0.0",
   "description": "Styles and components for use in svelte websites",
   "type": "module",
-  "module": "index.ts",
-  "svelte": "index.ts",
+  "module": "./src/index.ts",
+  "svelte": "./src/index.ts",
   "license": "MIT",
   "scripts": {
     "lint": "prettier --check --ignore-path=../../.prettierignore && eslint *.ts*",
     "format": "prettier --write --ignore-path=../../.prettierignore ."
+  },
+  "dependencies": {
+    "config": "workspace:*"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.14",
