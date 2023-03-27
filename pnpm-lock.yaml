@@ -5,6 +5,7 @@ importers:
   .:
     specifiers:
       autoprefixer: ^10.4.14
+      daisyui: ^2.51.4
       dotenv: ^16.0.3
       eslint: ^8.0.0
       eslint-config-custom: workspace:*
@@ -16,6 +17,7 @@ importers:
       turbo: latest
     devDependencies:
       autoprefixer: 10.4.14_postcss@8.4.21
+      daisyui: 2.51.4_j7yt3jd32cwenjqavrrga47yr4
       dotenv: 16.0.3
       eslint: 8.28.0
       eslint-config-custom: link:packages/eslint-config-custom
@@ -74,8 +76,8 @@ importers:
       '@storybook/svelte': 7.0.0-rc.1_svelte@3.56.0
       '@storybook/sveltekit': 7.0.0-rc.1_qsasixljfa5qr7tlt7kl76tmvq
       '@storybook/testing-library': 0.0.14-next.1
-      '@sveltejs/adapter-auto': 2.0.0_@sveltejs+kit@1.13.0
-      '@sveltejs/kit': 1.13.0_svelte@3.56.0+vite@4.0.0
+      '@sveltejs/adapter-auto': 2.0.0_@sveltejs+kit@1.14.0
+      '@sveltejs/kit': 1.14.0_svelte@3.56.0+vite@4.0.0
       '@sveltejs/vite-plugin-svelte': 2.0.3_svelte@3.56.0+vite@4.0.0
       babel-loader: 8.3.0_olvwa26bkc7sescpzrxlktjrvi
       classnames: 2.3.2
@@ -103,12 +105,9 @@ importers:
       '@storybook/testing-library': ^0.0.14-next.1
       '@sveltejs/adapter-auto': latest
       '@sveltejs/kit': latest
-      autoprefixer: ^10.4.7
       classnames: ^2.3.2
       config: workspace:*
-      daisyui: ^2.51.4
       eslint-config-custom: workspace:*
-      postcss: ^8.4.14
       postcss-load-config: ^4.0.1
       react: ^18.2.0
       react-dom: ^18.2.0
@@ -118,7 +117,6 @@ importers:
       svelte: ^3.54.0
       svelte-check: ^3.0.1
       svelte-preprocess: ^4.10.7
-      tailwindcss: ^3.1.5
       tslib: ^2.4.1
       typescript: ^4.9.2
       ui: workspace:*
@@ -137,22 +135,18 @@ importers:
       '@storybook/svelte': 7.0.0-rc.1_svelte@3.56.0
       '@storybook/sveltekit': 7.0.0-rc.1_zn5ioytodaj2vhx6nz5pdsexty
       '@storybook/testing-library': 0.0.14-next.1
-      '@sveltejs/adapter-auto': 2.0.0_@sveltejs+kit@1.13.0
-      '@sveltejs/kit': 1.13.0_svelte@3.56.0+vite@4.0.0
-      autoprefixer: 10.4.14_postcss@8.4.21
+      '@sveltejs/adapter-auto': 2.0.0_@sveltejs+kit@1.14.0
+      '@sveltejs/kit': 1.14.0_svelte@3.56.0+vite@4.0.0
       classnames: 2.3.2
-      daisyui: 2.51.4_j7yt3jd32cwenjqavrrga47yr4
       eslint-config-custom: link:../../packages/eslint-config-custom
-      postcss: 8.4.21
-      postcss-load-config: 4.0.1_postcss@8.4.21
+      postcss-load-config: 4.0.1
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
       sass: 1.59.3
       storybook: 7.0.0-rc.1
       svelte: 3.56.0
-      svelte-check: 3.1.4_zuhtr3y5skb52vjnzr233lxhgi
-      svelte-preprocess: 4.10.7_sbkykdc3jdzmsm4ughodw4zlym
-      tailwindcss: 3.2.7_postcss@8.4.21
+      svelte-check: 3.1.4_j5yoysrxlz7w3iiawc3ct7ozea
+      svelte-preprocess: 4.10.7_g4vjyovrmc4jns4kff5bidqg6i
       tslib: 2.4.1
       typescript: 4.9.5
       vite: 4.0.0_sass@1.59.3
@@ -180,28 +174,20 @@ importers:
 
   packages/ui:
     specifiers:
-      autoprefixer: ^10.4.14
       classnames: ^2.3.2
       config: workspace:*
-      daisyui: ^2.51.4
       eslint-config-custom: workspace:*
-      postcss: ^8.4.21
       sass: ^1.59.3
-      svelte: ^3.9.2
-      svelte-preprocess: ^4.10.6
-      tailwindcss: ^3.1.5
+      svelte: ^3.54.0
+      svelte-preprocess: ^4.10.7
     dependencies:
       config: link:../config
     devDependencies:
-      autoprefixer: 10.4.14_postcss@8.4.21
       classnames: 2.3.2
-      daisyui: 2.51.4_j7yt3jd32cwenjqavrrga47yr4
       eslint-config-custom: link:../eslint-config-custom
-      postcss: 8.4.21
       sass: 1.59.3
-      svelte: 3.53.1
-      svelte-preprocess: 4.10.7_nv73onxrvagupbmjmyzi2bsyni
-      tailwindcss: 3.2.7_postcss@8.4.21
+      svelte: 3.56.0
+      svelte-preprocess: 4.10.7_sass@1.59.3+svelte@3.56.0
 
 packages:
 
@@ -2412,12 +2398,12 @@ packages:
       telejson: 7.0.4
     dev: true
 
-  /@storybook/channel-postmessage/7.0.0-rc.7:
-    resolution: {integrity: sha512-hvZ5Np1N6lxM522BhFVlVvYIB38C6ZVBb4+eD2KN9119zJPKWpeVyFz8hu9Uc8RpX7VOGyhb9uk0yq3EXwNiKQ==}
+  /@storybook/channel-postmessage/7.0.0-rc.8:
+    resolution: {integrity: sha512-SHx9X5HtNV7/XzcjxzEYFM/3Xxn2pIsNtzFMIpe9YhfMQLGKXgmm9Hv5o5s4GXZquJN6w646XE90eOol6cwTDg==}
     dependencies:
-      '@storybook/channels': 7.0.0-rc.7
-      '@storybook/client-logger': 7.0.0-rc.7
-      '@storybook/core-events': 7.0.0-rc.7
+      '@storybook/channels': 7.0.0-rc.8
+      '@storybook/client-logger': 7.0.0-rc.8
+      '@storybook/core-events': 7.0.0-rc.8
       '@storybook/global': 5.0.0
       qs: 6.11.1
       telejson: 7.0.4
@@ -2436,8 +2422,8 @@ packages:
     resolution: {integrity: sha512-hBER6gliJxsrYEbWlXNljf0/1ybIlYCtaK0Vcgqdw/zmTLG6hEbBpVnxJh56T3mD0Beng8ro9D4EkcLZGQ1LlA==}
     dev: true
 
-  /@storybook/channels/7.0.0-rc.7:
-    resolution: {integrity: sha512-0D5lKPIa04Hmu9JVd9nuw+1y6RUX/yHva870gX0qB5ts8M8lhfmHlYQLT61kyWcr1/77NIypSUHBuZK5q3E71w==}
+  /@storybook/channels/7.0.0-rc.8:
+    resolution: {integrity: sha512-2tI/ECbQcXjncYGLVdrttNT8adIp6kV/bnQGJWmF5hBXZ7Izwyq1WRPTgPT++RihmOOTHvkRx4GCKfwluOrNpA==}
     dev: true
 
   /@storybook/cli/7.0.0-rc.1:
@@ -2495,8 +2481,8 @@ packages:
       '@storybook/global': 5.0.0
     dev: true
 
-  /@storybook/client-logger/7.0.0-rc.7:
-    resolution: {integrity: sha512-VmiPmFZPN2qMSwHERr5QskFraeG0gwZcBv+OhNt9HfLx8al1ryCyYxyi4tbPwqXHcTttedCtEgyNg106tqzMSg==}
+  /@storybook/client-logger/7.0.0-rc.8:
+    resolution: {integrity: sha512-6pBwnK0vB0mgkO8opiHbZxBVGyaKFSpJXglfx8F15gIwA3r1njgtOZvvYx+03DCz0ExaTiSXrrbWp39mI8mo5w==}
     dependencies:
       '@storybook/global': 5.0.0
     dev: true
@@ -2577,8 +2563,8 @@ packages:
     resolution: {integrity: sha512-kp5p7U8H4X+XnJwzm3S9UM1vOREZ/bziQ34882FevPq7HaAQ5JI7p9gQO50JdTbDoe8gtn8cgfzxSkqO6FlY1w==}
     dev: true
 
-  /@storybook/core-events/7.0.0-rc.7:
-    resolution: {integrity: sha512-gwAbDlH/UdLIR/CJQaZr4bS6IgHVI0W9JBELnIubfFzAEH5aiRupvywpWFuFh1/Z1IEnykyq7BaNChfw0rFvcw==}
+  /@storybook/core-events/7.0.0-rc.8:
+    resolution: {integrity: sha512-KsKf+Ob6zQ8+IJ9oDD5xqASwYGzcjT08azBjSt4yocHIJ3mY741h88YDS0wcwnM+JrV6iFYlY0hiK35lnBEddA==}
     dev: true
 
   /@storybook/core-server/7.0.0-rc.1:
@@ -2697,14 +2683,14 @@ packages:
       '@storybook/preview-api': 7.0.0-rc.1
     dev: true
 
-  /@storybook/instrumenter/7.0.0-rc.7:
-    resolution: {integrity: sha512-BSTOp61Gs1Sw+CLRbgqeYxmNc7PmaVEukrS/CCIE2byz2TpzoEpgDZeVBefWNrG0I/yZrpjaeUfHW1grB4gHBA==}
+  /@storybook/instrumenter/7.0.0-rc.8:
+    resolution: {integrity: sha512-esRTjLLJJAKsTun/8u/wvsS+OPlwB2eal+ZAo0cBo+YTpkw0A6R+HunhNU1elZ8ztbJsZxP2drPprrFGXgeaLQ==}
     dependencies:
-      '@storybook/channels': 7.0.0-rc.7
-      '@storybook/client-logger': 7.0.0-rc.7
-      '@storybook/core-events': 7.0.0-rc.7
+      '@storybook/channels': 7.0.0-rc.8
+      '@storybook/client-logger': 7.0.0-rc.8
+      '@storybook/core-events': 7.0.0-rc.8
       '@storybook/global': 5.0.0
-      '@storybook/preview-api': 7.0.0-rc.7
+      '@storybook/preview-api': 7.0.0-rc.8
     dev: true
 
   /@storybook/manager-api/7.0.0-rc.1_biqbaboplfbrettd7655fr4n2y:
@@ -2774,16 +2760,16 @@ packages:
       util-deprecate: 1.0.2
     dev: true
 
-  /@storybook/preview-api/7.0.0-rc.7:
-    resolution: {integrity: sha512-tmftfWdkCfCBWOyCloaAfdDP75xAeu6yuXCBBTuxrMxyBI6EHOrrFEDEAHsEEt1WriL8EMEylpPwzMWjRMtBIg==}
+  /@storybook/preview-api/7.0.0-rc.8:
+    resolution: {integrity: sha512-K45I81s2ZOoeAmKC8DP0HPhR67tr94pkgKddaoWLQJHBgVq9GKuy7QCcnn2zYKOFd1d/uqcnrQyg4AkmcjkVCg==}
     dependencies:
-      '@storybook/channel-postmessage': 7.0.0-rc.7
-      '@storybook/channels': 7.0.0-rc.7
-      '@storybook/client-logger': 7.0.0-rc.7
-      '@storybook/core-events': 7.0.0-rc.7
+      '@storybook/channel-postmessage': 7.0.0-rc.8
+      '@storybook/channels': 7.0.0-rc.8
+      '@storybook/client-logger': 7.0.0-rc.8
+      '@storybook/core-events': 7.0.0-rc.8
       '@storybook/csf': 0.0.2-next.10
       '@storybook/global': 5.0.0
-      '@storybook/types': 7.0.0-rc.7
+      '@storybook/types': 7.0.0-rc.8
       '@types/qs': 6.9.7
       dequal: 2.0.3
       lodash: 4.17.21
@@ -2957,8 +2943,8 @@ packages:
   /@storybook/testing-library/0.0.14-next.1:
     resolution: {integrity: sha512-1CAl40IKIhcPaCC4pYCG0b9IiYNymktfV/jTrX7ctquRY3akaN7f4A1SippVHosksft0M+rQTFE0ccfWW581fw==}
     dependencies:
-      '@storybook/client-logger': 7.0.0-rc.7
-      '@storybook/instrumenter': 7.0.0-rc.7
+      '@storybook/client-logger': 7.0.0-rc.8
+      '@storybook/instrumenter': 7.0.0-rc.8
       '@testing-library/dom': 8.20.0
       '@testing-library/user-event': 13.5.0_yxlyej73nftwmh2fiao7paxmlm
       ts-dedent: 2.2.0
@@ -2987,26 +2973,26 @@ packages:
       file-system-cache: 2.0.2
     dev: true
 
-  /@storybook/types/7.0.0-rc.7:
-    resolution: {integrity: sha512-NGDAkSrooNuS9P+sKdTeW3NNVSVv3ED8Q8WYe5Z4uDSdFda35byq05bCneecJ0KHE5EYC2B2yB1ebRUOGA3nyw==}
+  /@storybook/types/7.0.0-rc.8:
+    resolution: {integrity: sha512-Jz3MLLKs+Jy8dZVd+HVHuKAbxa7xcF/MLfUNldu0HxtJr3b7ybUlvjWjT5h2I60V5TYkWGf9wcKmegI6TGiJXQ==}
     dependencies:
-      '@storybook/channels': 7.0.0-rc.7
+      '@storybook/channels': 7.0.0-rc.8
       '@types/babel__core': 7.20.0
       '@types/express': 4.17.17
       file-system-cache: 2.0.2
     dev: true
 
-  /@sveltejs/adapter-auto/2.0.0_@sveltejs+kit@1.13.0:
+  /@sveltejs/adapter-auto/2.0.0_@sveltejs+kit@1.14.0:
     resolution: {integrity: sha512-b+gkHFZgD771kgV3aO4avHFd7y1zhmMYy9i6xOK7m/rwmwaRO8gnF5zBc0Rgca80B2PMU1bKNxyBTHA14OzUAQ==}
     peerDependencies:
       '@sveltejs/kit': ^1.0.0
     dependencies:
-      '@sveltejs/kit': 1.13.0_svelte@3.56.0+vite@4.0.0
+      '@sveltejs/kit': 1.14.0_svelte@3.56.0+vite@4.0.0
       import-meta-resolve: 2.2.0
     dev: true
 
-  /@sveltejs/kit/1.13.0_svelte@3.56.0+vite@4.0.0:
-    resolution: {integrity: sha512-t44xqlSTn/k+BridiJFTD8dCRPNd9msCSSPLZT+/3P9deNp/al6ed396MSpsskK7r2kevYmmxywK16qtn6Rvjw==}
+  /@sveltejs/kit/1.14.0_svelte@3.56.0+vite@4.0.0:
+    resolution: {integrity: sha512-4e/cZT0z4IppEkqNvMrurGz6VE1gScukFU7XqwTL/yrGJGXHqS9D7RvsOcE1hASsgrMu6w/fKTIhxT5oN0K1Jw==}
     engines: {node: ^16.14 || >=18}
     hasBin: true
     requiresBuild: true
@@ -6814,7 +6800,7 @@ packages:
       yaml: 1.10.2
     dev: true
 
-  /postcss-load-config/4.0.1_postcss@8.4.21:
+  /postcss-load-config/4.0.1:
     resolution: {integrity: sha512-vEJIc8RdiBRu3oRAI0ymerOn+7rPuMvRXslTvZUKZonDHFIczxztIyJ1urxM1x9JXEikvpWWTUUqal5j/8QgvA==}
     engines: {node: '>= 14'}
     peerDependencies:
@@ -6827,7 +6813,6 @@ packages:
         optional: true
     dependencies:
       lilconfig: 2.1.0
-      postcss: 8.4.21
       yaml: 2.2.1
     dev: true
 
@@ -7761,7 +7746,7 @@ packages:
       - sugarss
     dev: true
 
-  /svelte-check/3.1.4_zuhtr3y5skb52vjnzr233lxhgi:
+  /svelte-check/3.1.4_j5yoysrxlz7w3iiawc3ct7ozea:
     resolution: {integrity: sha512-25Lb46ZS4IK/XpBMe4IBMrtYf23V8alqBX+szXoccb7uM0D2Wqq5rMRzYBONZnFVuU1bQG3R50lyIT5eRewv2g==}
     hasBin: true
     peerDependencies:
@@ -7774,7 +7759,7 @@ packages:
       picocolors: 1.0.0
       sade: 1.8.1
       svelte: 3.56.0
-      svelte-preprocess: 5.0.1_sbkykdc3jdzmsm4ughodw4zlym
+      svelte-preprocess: 5.0.1_g4vjyovrmc4jns4kff5bidqg6i
       typescript: 4.9.5
     transitivePeerDependencies:
       - '@babel/core'
@@ -7873,7 +7858,7 @@ packages:
       typescript: 4.9.5
     dev: true
 
-  /svelte-preprocess/4.10.7_nv73onxrvagupbmjmyzi2bsyni:
+  /svelte-preprocess/4.10.7_g4vjyovrmc4jns4kff5bidqg6i:
     resolution: {integrity: sha512-sNPBnqYD6FnmdBrUmBCaqS00RyCsCpj2BG58A1JBswNF7b0OKviwxqVrOL/CKyJrLSClrSeqQv5BXNg2RUbPOw==}
     engines: {node: '>= 9.11.2'}
     requiresBuild: true
@@ -7914,15 +7899,17 @@ packages:
       typescript:
         optional: true
     dependencies:
+      '@babel/core': 7.21.0
       '@types/pug': 2.0.6
       '@types/sass': 1.43.1
       detect-indent: 6.1.0
       magic-string: 0.25.9
-      postcss: 8.4.21
+      postcss-load-config: 4.0.1
       sass: 1.59.3
       sorcery: 0.10.0
       strip-indent: 3.0.0
-      svelte: 3.53.1
+      svelte: 3.56.0
+      typescript: 4.9.5
     dev: true
 
   /svelte-preprocess/4.10.7_q4zhchnsx2m326xgys6pmabsda:
@@ -7977,7 +7964,7 @@ packages:
       typescript: 4.9.3
     dev: true
 
-  /svelte-preprocess/4.10.7_sbkykdc3jdzmsm4ughodw4zlym:
+  /svelte-preprocess/4.10.7_sass@1.59.3+svelte@3.56.0:
     resolution: {integrity: sha512-sNPBnqYD6FnmdBrUmBCaqS00RyCsCpj2BG58A1JBswNF7b0OKviwxqVrOL/CKyJrLSClrSeqQv5BXNg2RUbPOw==}
     engines: {node: '>= 9.11.2'}
     requiresBuild: true
@@ -8018,21 +8005,17 @@ packages:
       typescript:
         optional: true
     dependencies:
-      '@babel/core': 7.21.0
       '@types/pug': 2.0.6
       '@types/sass': 1.43.1
       detect-indent: 6.1.0
       magic-string: 0.25.9
-      postcss: 8.4.21
-      postcss-load-config: 4.0.1_postcss@8.4.21
       sass: 1.59.3
       sorcery: 0.10.0
       strip-indent: 3.0.0
       svelte: 3.56.0
-      typescript: 4.9.5
     dev: true
 
-  /svelte-preprocess/5.0.1_sbkykdc3jdzmsm4ughodw4zlym:
+  /svelte-preprocess/5.0.1_g4vjyovrmc4jns4kff5bidqg6i:
     resolution: {integrity: sha512-0HXyhCoc9rsW4zGOgtInylC6qj259E1hpFnJMJWTf+aIfeqh4O/QHT31KT2hvPEqQfdjmqBR/kO2JDkkciBLrQ==}
     engines: {node: '>= 14.10.0'}
     requiresBuild: true
@@ -8075,18 +8058,12 @@ packages:
       '@types/sass': 1.43.1
       detect-indent: 6.1.0
       magic-string: 0.27.0
-      postcss: 8.4.21
-      postcss-load-config: 4.0.1_postcss@8.4.21
+      postcss-load-config: 4.0.1
       sass: 1.59.3
       sorcery: 0.11.0
       strip-indent: 3.0.0
       svelte: 3.56.0
       typescript: 4.9.5
-    dev: true
-
-  /svelte/3.53.1:
-    resolution: {integrity: sha512-Q4/hHkktZogGhN5iqxqSi9sjEVoe/NbIxX4hXEHoasTxj+TxEQVAq66LnDMdAZxjmsodkoI5F3slqsS68U7FNw==}
-    engines: {node: '>= 8'}
     dev: true
 
   /svelte/3.56.0:

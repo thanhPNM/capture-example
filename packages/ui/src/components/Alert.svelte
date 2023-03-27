@@ -1,6 +1,5 @@
 <script lang="ts">
   import classnames from 'classnames';
-
   export let message: string = '';
 
   type AlertType = 'info' | 'success' | 'warning' | 'error';

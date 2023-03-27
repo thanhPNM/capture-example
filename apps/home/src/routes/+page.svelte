@@ -101,12 +101,9 @@
           <li class={session.active ? 'active' : 'inactive'} transition:slide|local>
             <a href={`/id/${session.id}`} target="_blank">{i + 1}. {session.id}</a>
             {#if session.active}
-              <button class="custom-button" on:click={() => inactiveSession(session.id)}>
+              <Button className="custom-button" on:click={() => inactiveSession(session.id)}>
                 <DeleteIcon width={20} />
-              </button>
-              <!-- <Button className="custom-button" on:click={() => inactiveSession(session.id)}>
-                <DeleteIcon width={20} />
-              </Button> -->
+              </Button>
             {/if}
           </li>
         {/each}
@@ -192,7 +189,7 @@
       }
     }
 
-    .custom-button {
+    :global(.custom-button) {
       padding: 6px 16px;
       cursor: pointer;
       background-color: var(--theme-primary);

@@ -1,8 +1,13 @@
 import sveltePreprocess from 'svelte-preprocess';
 
-export default {
-  preprocess: sveltePreprocess({
-    scss: true,
-    postcss: true
-  })
+/** @type {import('@sveltejs/kit').Config} */
+const config = {
+  preprocess: [
+    sveltePreprocess({
+      scss: true,
+      postcss: true
+    })
+  ]
 };
+
+export default config;

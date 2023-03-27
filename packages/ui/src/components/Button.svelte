@@ -36,7 +36,3 @@
 <button type="button" class={cls} {...restProps} on:click>
   <slot />
 </button>
-
-<style lang="scss">
-  @import '../tailwind.css';
-</style>

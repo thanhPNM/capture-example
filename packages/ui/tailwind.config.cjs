@@ -1,5 +1,1 @@
-const defaultConfig = require('config/tailwind.config.cjs');
-
-module.exports = {
-  ...defaultConfig
-};
+module.exports = require('config/tailwind.config.cjs');
