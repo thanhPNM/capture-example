@@ -8,6 +8,7 @@
     "format": "prettier --write ."
   },
   "devDependencies": {
+    "@storybook/cli": "7.0.0-rc.7",
     "autoprefixer": "^10.4.14",
     "daisyui": "^2.51.4",
     "dotenv": "^16.0.3",
