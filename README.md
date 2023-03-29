@@ -8,11 +8,13 @@ This Turborepo includes the following packages/apps:
 
 ### Apps and Packages
 
-- `home`: a [svelte-kit](https://kit.svelte.dev/) app
-- `camera`: another [svelte-kit](https://kit.svelte.dev/) app
-- `ui`: a stub Svelte component library shared by both `web` and `docs` applications
-- `eslint-config-custom`: `eslint` configurations (includes `eslint-plugin-svelte` and `eslint-config-prettier`)
-- `shared-utils`: a shared utils between apps
+-   `home`: a [svelte-kit](https://kit.svelte.dev/) app
+-   `camera`: another [svelte-kit](https://kit.svelte.dev/) app
+-   `workshop`: used to show Storybook for all component in `packages/ui`
+-   `ui`: a stub Svelte component library shared by both `web` and `docs` applications
+-   `config`: `postcss` and `tailwind` configurations
+-   `eslint-config-custom`: `eslint` configurations (includes `eslint-plugin-svelte` and `eslint-config-prettier`)
+-   `shared-utils`: a shared utils between apps
 
 Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
 
@@ -20,16 +22,16 @@ Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
 
 This Turborepo has some additional tools already setup for you:
 
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting
+-   [TypeScript](https://www.typescriptlang.org/) for static type checking
+-   [ESLint](https://eslint.org/) for code linting
+-   [Prettier](https://prettier.io) for code formatting
 
 ## How to use
 
 ### Required CLI:
 
-pnpm@7.15.0 (you should install globally on your machine)
-turbo CLI (you should install globally on your machine)
+-   pnpm@7.15.0 (you should install globally on your machine)
+-   turbo CLI (you should install globally on your machine)
 
 Run the following command:
 
@@ -55,7 +57,9 @@ capture-demo-example/
 ├── apps/
 │ ├── camera
 │ └── home
+│ └── workshop
 ├── packages/
+│ ├── config
 │ ├── eslint-config-custom
 │ ├── ui/
 │ │ ├── Button.svelte
@@ -72,9 +76,9 @@ Follow [this instruction](https://turbo.build/repo/docs/handbook/workspaces) if 
 
 ## Authors
 
-- Thanh Pham
+-   Thanh Pham
 
 ## Acknowledgments
 
-- This project was created as a demo for TurboRepo.
-- Feel free to customize this README to fit your specific project needs. Good luck with your Svelte project!
+-   This project was created as a demo for TurboRepo.
+-   Feel free to customize this README to fit your specific project needs. Good luck with your Svelte project!
