@@ -4,8 +4,8 @@
   import { Alert } from 'ui';
   import { SimpleSDK } from '@store/index';
 
-  import '../app.postcss';
-  import '../global.scss';
+  import 'src/app.postcss';
+  import 'src/global.scss';
 
   let isMobile = isMobileBrowser();
   console.log('🚀 ~ file: +layout.svelte:7 ~ isMobile:', isMobile);

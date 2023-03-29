@@ -5,7 +5,8 @@ import sveltePreprocess from 'svelte-preprocess';
 const config = {
   preprocess: [
     sveltePreprocess({
-      scss: true
+      scss: true,
+      postcss: true
     })
   ],
 

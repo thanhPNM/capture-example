@@ -12,24 +12,26 @@
     "format": "prettier --write --ignore-path=../../.prettierignore ."
   },
   "dependencies": {
+    "config": "workspace:*",
     "shared-utils": "workspace:*",
-    "ui": "workspace:*",
-    "config": "workspace:*"
+    "ui": "workspace:*"
   },
   "devDependencies": {
+    "@poppanator/sveltekit-svg": "^3.0.0",
     "@sveltejs/adapter-auto": "latest",
     "@sveltejs/kit": "latest",
     "@sveltejs/vite-plugin-svelte": "^2.0.3",
     "babel-loader": "^8.3.0",
     "classnames": "^2.3.2",
     "eslint-config-custom": "workspace:*",
+    "postcss-load-config": "^4.0.1",
     "svelte": "^3.56.0",
     "svelte-check": "^2.7.1",
-    "svelte-loader": "^3.1.7",
     "svelte-preprocess": "^4.10.6",
     "tslib": "^2.3.1",
     "typescript": "^4.7.2",
-    "vite": "^4.0.0"
+    "vite": "^4.0.0",
+    "vite-tsconfig-paths": "^4.0.7"
   },
   "type": "module"
 }

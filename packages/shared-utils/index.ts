@@ -1,5 +1,5 @@
-export function validateSessionId(id: string): boolean {
-    const regex = /^([A-Z]{3})-(?=.*[A-Z])(?=.*\d)[A-Z\d]{10}$/g
+export function validateSessionId(id: string, containNumberAndLetter: boolean = false): boolean {
+    const regex = containNumberAndLetter ? /^([A-Z]{3})-(?=.*[A-Z])(?=.*\d)[A-Z\d]{10}$/g : /^([A-Z]{3})-[A-Z\d]{10}$/g
     return regex.test(id)
 }
 

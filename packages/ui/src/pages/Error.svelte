@@ -1,5 +1,6 @@
 <script lang="ts">
   export let page;
+  console.log($page);
   const DEFAULT_MESSAGE: string = 'This boat is broken! Wait a minute, our cool crew is fixing it';
   const errorContents = {
     404: {
@@ -20,7 +21,9 @@
 <div class="error-page">
   <h1>{$page.status} Error</h1>
   <h2>
-    {errorContents[$page.status] ? errorContents[$page.status].message : errorContents[500].message}
+    {errorContents[$page.status]
+      ? $page.error.message ?? errorContents[$page.status].message
+      : errorContents[500].message}
   </h2>
 
   <p class="emoji">

@@ -1,5 +1,6 @@
 <script lang="ts">
   import { onMount } from 'svelte';
+  import { PUBLIC_CAPUI_CAMERA_URL } from '$env/static/public';
   import { goto } from '$app/navigation';
 
   import { sessions } from '@store/index';
@@ -29,7 +30,7 @@
       }, 1000);
 
       setTimeout(() => {
-        goto(`http://localhost:3001/id/${existed.id}`);
+        goto(`${PUBLIC_CAPUI_CAMERA_URL}/${existed.id}`);
       }, 3000);
     }
   });
