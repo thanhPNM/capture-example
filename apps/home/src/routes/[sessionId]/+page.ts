@@ -5,7 +5,6 @@ import { validateSessionId } from 'shared-utils';
 
 export const load: PageLoad = ({ params }: { params: { sessionId: string } }) => {
     console.log(params.sessionId)
-
     if (!validateSessionId(params.sessionId)) {
         throw error(404, {
             message: 'Not found'

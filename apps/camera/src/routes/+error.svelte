@@ -1,6 +1,6 @@
 <script>
-  import { ErrorPage } from 'ui';
-  import { page } from '$app/stores';
+    import { ErrorPage } from 'ui'
+    import { page } from '$app/stores'
 </script>
 
-<ErrorPage {page} />
+<ErrorPage {page} canGoBack={false} />

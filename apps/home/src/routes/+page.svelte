@@ -84,7 +84,7 @@
             placeholder="Fill in where you wanna go"
             class="input input-bordered input-lg"
             autofocus
-            maxlength="20"
+            maxlength={14}
             bind:value={sessionId}
             on:keypress={handleKeyPress}
             on:blur={() => {
@@ -130,14 +130,15 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: center;
+        justify-content: space-between;
         padding: 5rem;
         overflow: hidden;
 
         .input-wrapper {
+            flex: 1;
             justify-content: center;
-            margin-bottom: 5em;
             font-size: 20px;
+            margin-bottom: 1em;
 
             .label-text {
                 color: var(--theme-on-primary);
@@ -207,12 +208,13 @@
             color: var(--theme-on-primary);
             margin-left: 1em;
             text-decoration: none;
+            border-color: transparent;
             &:hover {
                 background-color: var(--theme-secondary);
             }
         }
 
-        @media screen and (max-width: 748px) {
+        @media screen and (max-width: 844px) {
             font-size: 18px;
             padding: 1.2rem;
 
