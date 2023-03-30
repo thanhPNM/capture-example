@@ -2,15 +2,13 @@
 @import 'fonts.scss';
 
 :root {
-    --light-grey: #ebebeb;
-    --warm-grey: #979191;
-    --blue-pave: #1f66f1;
-    --navy-pave: #0d2a76;
+    --grey: #F6F1F1:var(--grey);
     --black: #000000;
     --grey-text-color: #333333;
     --error-text-color: darkred;
-}
-
-body {
+  }
+  
+  body {
     background-color: #f8f9fa;
-}
+  }
+  

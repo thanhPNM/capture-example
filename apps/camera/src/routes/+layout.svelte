@@ -1,5 +1,6 @@
 <script>
     import 'src/app.postcss'
+    import 'src/global.scss'
 </script>
 
 <div class="wrapper">
@@ -11,7 +12,10 @@
         height: 100vh;
         display: flex;
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
+        background-image: linear-gradient(
+            to bottom right,
+            var(--theme-secondary),
+            var(--theme-primary)
+        );
     }
 </style>

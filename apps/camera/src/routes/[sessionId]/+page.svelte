@@ -12,13 +12,43 @@
     <meta name="description" content="Capture UI 2.0" />
 </svelte:head>
 
-<h1>Capture UI 2.0</h1>
-<Button type="primary" on:click={() => goto(`${data.id}/capture`)}>Start</Button
->
+<div class="capture-container">
+    <h1>Capture UI 2.0</h1>
+    <Button
+        className="custom-button"
+        on:click={() => goto(`${data.id}/capture`)}>Start</Button
+    >
+</div>
 
 <style lang="scss">
+    .capture-container {
+        background-image: linear-gradient(
+            to bottom right,
+            var(--theme-secondary),
+            var(--theme-primary)
+        );
+        flex: 1;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
     h1 {
         font-size: 1.5rem;
         margin: 2em;
+        color: var(--theme-on-primary);
+    }
+
+    :global(.custom-button) {
+        color: var(--theme-on-surface);
+        background-color: var(--theme-on-primary);
+        border-color: transparent;
+    }
+
+    :global(.custom-button:hover) {
+        color: var(--theme-on-secondary);
+        background-color: var(--theme-secondary);
+        border-color: transparent;
     }
 </style>

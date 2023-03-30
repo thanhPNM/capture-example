@@ -7,12 +7,8 @@
         'This boat is broken! Wait a minute, our cool crew is fixing it'
     const errorContents = {
         404: {
-            emoji: '🌊',
-            message: 'Oops! It seems like you are lost in the ocean...',
-        },
-        420: {
             emoji: '🫠',
-            message: DEFAULT_MESSAGE,
+            message: 'Oops! It seems like you are lost in the ocean...',
         },
         500: {
             emoji: '💥',

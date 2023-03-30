@@ -1,21 +1,22 @@
 {
-  "extends": "./.svelte-kit/tsconfig.json",
-  "compilerOptions": {
-    "allowJs": true,
-    "checkJs": true,
-    "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
-    "resolveJsonModule": true,
-    "moduleResolution": "node",
-    "skipLibCheck": true,
-    "sourceMap": true,
-    "strict": true,
-    "baseUrl": ".",
-    "paths": {
-      "src/*": ["src/*"],
-      "@static/*": ["static/*"],
-      "@utils/*": ["src/utils/*"],
-      "@store/*": ["src/store/*"]
+    "extends": "./.svelte-kit/tsconfig.json",
+    "compilerOptions": {
+        "allowJs": true,
+        "checkJs": true,
+        "esModuleInterop": true,
+        "forceConsistentCasingInFileNames": true,
+        "resolveJsonModule": true,
+        "moduleResolution": "node",
+        "skipLibCheck": true,
+        "sourceMap": true,
+        "strict": true,
+        "baseUrl": ".",
+        "paths": {
+            "src/*": ["src/*"],
+            "static/*": ["static/*"],
+            "@assets/*": ["src/assets/*"],
+            "@store/*": ["src/store/*"],
+            "@utils/*": ["src/utils/*"]
+        }
     }
-  }
 }

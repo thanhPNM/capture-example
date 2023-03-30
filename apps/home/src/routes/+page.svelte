@@ -5,7 +5,8 @@
     import { Button } from 'ui'
     import { sessions } from '@store/index'
     import { validateSessionId } from 'shared-utils'
-    import DeleteIcon from '@static/delete-icon.svg?component'
+
+    import DeleteIcon from '@assets/icons/delete-icon.svg?component'
 
     let sessionId: string = ''
     let error: string = ''
@@ -130,12 +131,12 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: space-between;
+        justify-content: space-evenly;
         padding: 5rem;
         overflow: hidden;
 
         .input-wrapper {
-            flex: 1;
+            /* flex: 1; */
             justify-content: center;
             font-size: 20px;
             margin-bottom: 1em;

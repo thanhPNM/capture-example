@@ -8,6 +8,15 @@
     let isMobile = isMobileBrowser()
 </script>
 
+<svelte:head>
+    <link
+        rel="preload"
+        href="https://fonts.googleapis.com/css?family=Montserrat"
+        as="font"
+        crossorigin=""
+    />
+</svelte:head>
+
 <div class="wrapper">
     {#if !isMobile}
         <Alert message="You're currently not using mobile." type="warning" />
@@ -23,8 +32,8 @@
         flex-direction: column;
         background-image: linear-gradient(
             to bottom right,
-            var(--theme-primary),
-            var(--theme-secondary)
+            var(--theme-secondary),
+            var(--theme-primary)
         );
         padding: 8px;
     }

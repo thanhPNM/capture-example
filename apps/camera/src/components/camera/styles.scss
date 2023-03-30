@@ -1,0 +1,26 @@
+.camera-container {
+    position: relative;
+    .camera-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+    .action-area {
+        position: fixed;
+        top: 50%;
+        right: 10px;
+        transform: translate(0, -50%);
+    }
+
+    :global(.capture-btn) {
+        color: var(--theme-on-primary);
+        background-color: var(--theme-primary);
+        border-color: transparent;
+        height: 100px;
+    }
+
+    canvas {
+        display: none;
+    }
+}

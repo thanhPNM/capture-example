@@ -2,15 +2,22 @@
     import { onMount } from 'svelte'
     import { Button } from 'ui'
 
+    import { hasGetUserMedia, polyfillGetUserMedia } from './utils'
+    import type { ScreenshotFormatType, IScreenshotDimensions } from './models'
+
     export const startOnMount: boolean = true
+    export const mirrored: boolean = true
+    export const screenshotFormat: ScreenshotFormatType = 'image/jpeg'
+    export const screenshotQuality: number = 0.92
+
     export let onCapture: (picture: any) => void
 
     let videoSource: any = null
     let loading: boolean = false
     let isRunning: boolean = false
-    let stream: any = null
+    let stream: MediaStream | null = null
     let capturedPicture: any = null
-    let canvas: any = null
+    let canvas: HTMLCanvasElement | null = null
 
     const width = 1080
     const height = 720
@@ -61,7 +68,7 @@
             return false
         }
 
-        stream.getTracks().forEach(function (track: any) {
+        stream?.getTracks().forEach(function (track: any) {
             console.log(track)
             if (track.readyState == 'live' && track.kind === 'video') {
                 track.stop()
@@ -70,11 +77,11 @@
     }
 
     $: capturePicture = async () => {
-        const context = canvas.getContext('2d')
+        const context = canvas?.getContext('2d')
         if (width && height) {
-            context.drawImage(videoSource, 0, 0, width, height)
+            context?.drawImage(videoSource, 0, 0, width, height)
 
-            const data = canvas.toDataURL('image/png')
+            const data = canvas?.toDataURL('image/png')
             capturedPicture.setAttribute('src', data)
             onCapture && onCapture(capturedPicture)
         } else {
@@ -83,6 +90,12 @@
     }
 
     onMount(() => {
+        polyfillGetUserMedia()
+        if (!hasGetUserMedia()) {
+            console.error('getUserMedia not supported')
+
+            return
+        }
         console.log(screen)
         if (startOnMount) {
             obtenerVideoCamera()
@@ -99,27 +112,15 @@
         <video bind:this={videoSource} />
     </div>
     <div class="action-area">
-        <Button on:click={capturePicture}>Capture</Button>
+        <Button
+            type="secondary"
+            className="capture-btn rounded-full"
+            on:click={capturePicture}>Capture</Button
+        >
     </div>
     <canvas bind:this={canvas} width={1280} height={720} />
 </div>
 
 <style lang="scss">
-    .camera-container {
-        position: relative;
-        .camera-wrapper {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-        }
-        .action-area {
-            position: fixed;
-            top: 50%;
-            right: 10px;
-        }
-        canvas {
-            display: none;
-        }
-    }
+    @import './styles.scss';
 </style>
