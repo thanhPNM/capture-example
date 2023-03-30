@@ -3,7 +3,7 @@
     import type { ButtonType } from './Button'
 
     export let type: ButtonType = 'default'
-    export let className: string
+    export let className: string = ''
     let restProps
     $: ({ type, className, ...restProps } = $$props)
     console.log('🚀 ~ file: Button.svelte:9 ~ type:', type)
