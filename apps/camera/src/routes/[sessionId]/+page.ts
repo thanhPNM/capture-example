@@ -1,12 +1,11 @@
 import { error } from '@sveltejs/kit';
-import { URL_OPENAPI_HOST } from '$env/static/private'
+import { PUBLIC_URL_OPENAPI_HOST } from '$env/static/public'
 
 import { validateSessionId } from 'shared-utils';
 
-const PATH_GET_INITIAL_DATA = `${URL_OPENAPI_HOST}/capture/sessions/`
+const PATH_GET_INITIAL_DATA = `${PUBLIC_URL_OPENAPI_HOST}/capture/sessions/`
 
 export const load = async ({ params }: { params: { sessionId: string } }) => {
-    console.log("🚀 ~ file: +page.server.ts:9 ~ load ~ sessionId:", params.sessionId)
     if (!validateSessionId(params.sessionId)) {
         throw error(404, {
             message: 'Not found'
