@@ -5,58 +5,47 @@
     import { hasGetUserMedia, polyfillGetUserMedia } from './utils'
     import type { ScreenshotFormatType, IScreenshotDimensions } from './models'
 
+    const DEFAULT_CAMERA_CONSTRAINTS: MediaTrackConstraints = {
+        facingMode: 'environment',
+        width: 1920,
+        height: 1080,
+    }
+
+    //props
+    export const cameraConstraints: MediaTrackConstraints =
+        DEFAULT_CAMERA_CONSTRAINTS
     export const startOnMount: boolean = true
     export const mirrored: boolean = true
     export const screenshotFormat: ScreenshotFormatType = 'image/jpeg'
     export const screenshotQuality: number = 0.92
 
+    export let onUserMedia: (stream: MediaStream) => void
     export let onCapture: (picture: any) => void
+
+    let screenshotDimensions: IScreenshotDimensions = {
+        width: cameraConstraints.width as number,
+        height: cameraConstraints.width as number,
+    }
 
     let videoSource: any = null
     let loading: boolean = false
     let isRunning: boolean = false
     let stream: MediaStream | null = null
-    let capturedPicture: any = null
     let canvas: HTMLCanvasElement | null = null
 
-    const width = 1080
-    const height = 720
-
-    const setVideoSize = (videoRatio: any) => {
-        console.log(
-            '🚀 ~ file: +page.svelte:16 ~ setVideoSize ~ videoRatio:',
-            videoRatio
-        )
-        const windowWidth = window.innerWidth
-        const windowHeight = window.innerHeight
-
-        // Check if the video width fits within the window width
-        if (videoRatio * windowHeight > windowWidth) {
-            videoSource.style.width = `${windowWidth}px`
-            videoSource.style.height = `${windowWidth / videoRatio}px`
-        } else {
-            videoSource.style.width = `${videoRatio * windowHeight}px`
-            videoSource.style.height = `${windowHeight}px`
-        }
-    }
-
-    const obtenerVideoCamera = async () => {
+    const openVideoCamera = async () => {
         try {
             loading = true
             stream = await navigator.mediaDevices.getUserMedia({
-                video: {
-                    facingMode: 'environment',
-                    aspectRatio: screen.width / screen.height,
-                },
+                video: cameraConstraints,
             })
             videoSource.srcObject = stream
             videoSource.play()
             const track = stream.getVideoTracks()[0]
             const settings = track.getSettings()
-            const videoRatio = settings.aspectRatio
-            // setVideoSize(videoRatio)
             loading = false
             isRunning = true
+            onUserMedia(stream)
         } catch (error) {
             console.log(error)
         }
@@ -68,38 +57,62 @@
             return false
         }
 
-        stream?.getTracks().forEach(function (track: any) {
+        stream?.getTracks().forEach((track: any) => {
             console.log(track)
+            stream?.removeTrack(track)
             if (track.readyState == 'live' && track.kind === 'video') {
                 track.stop()
             }
         })
+
+        videoSource.srcObject = null
     }
 
-    $: capturePicture = async () => {
+    const capturePicture = async () => {
         const context = canvas?.getContext('2d')
-        if (width && height) {
-            context?.drawImage(videoSource, 0, 0, width, height)
 
-            const data = canvas?.toDataURL('image/png')
-            capturedPicture.setAttribute('src', data)
-            onCapture && onCapture(capturedPicture)
-        } else {
-            // clearphoto();
+        if (!canvas || !context) {
+            return
         }
+
+        if (mirrored) {
+            context.translate(canvas.width, 0)
+            context.scale(-1, 1)
+        }
+
+        context?.drawImage(
+            videoSource,
+            0,
+            0,
+            screenshotDimensions.width,
+            screenshotDimensions.height
+        )
+
+        if (mirrored) {
+            context.scale(-1, 1)
+            context.translate(-canvas.width, 0)
+        }
+
+        const screenshot = canvas?.toDataURL(
+            screenshotFormat,
+            screenshotQuality
+        )
+
+        onCapture && onCapture(screenshot)
     }
 
     onMount(() => {
         polyfillGetUserMedia()
         if (!hasGetUserMedia()) {
             console.error('getUserMedia not supported')
-
             return
         }
         console.log(screen)
         if (startOnMount) {
-            obtenerVideoCamera()
+            openVideoCamera()
         }
+
+        setTimeout(() => closeCamera(), 30000)
     })
 </script>
 
@@ -115,10 +128,16 @@
         <Button
             type="secondary"
             className="capture-btn rounded-full"
-            on:click={capturePicture}>Capture</Button
+            on:click={capturePicture}
         >
+            Capture
+        </Button>
     </div>
-    <canvas bind:this={canvas} width={1280} height={720} />
+    <canvas
+        bind:this={canvas}
+        width={screenshotDimensions.width}
+        height={screenshotDimensions.height}
+    />
 </div>
 
 <style lang="scss">

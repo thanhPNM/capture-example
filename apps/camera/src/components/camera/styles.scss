@@ -1,10 +1,17 @@
 .camera-container {
     position: relative;
+    height: 100vh;
+    display: flex;
+
+    h1 {
+        color: var(--theme-on-primary);
+    }
     .camera-wrapper {
         display: flex;
         align-items: center;
         justify-content: center;
         text-align: center;
+        flex: 1;
     }
     .action-area {
         position: fixed;

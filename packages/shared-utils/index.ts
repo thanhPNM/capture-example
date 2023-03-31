@@ -17,3 +17,7 @@ export const loadWebAssembly = (fileName: string) =>
         .then((module) => {
             return new WebAssembly.Instance(module);
         });
+
+export const imgBase64ToBlob = (img: string) => {
+    return Promise.resolve(fetch(img).then(response => { return response.blob() }))
+}
