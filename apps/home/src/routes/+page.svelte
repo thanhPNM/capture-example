@@ -83,7 +83,7 @@
             id="session-id"
             type="text"
             placeholder="Fill in where you wanna go"
-            class="input input-bordered input-lg"
+            class="input input-bordered input-md"
             autofocus
             maxlength={14}
             bind:value={sessionId}
@@ -138,7 +138,7 @@
         .input-wrapper {
             /* flex: 1; */
             justify-content: center;
-            font-size: 20px;
+            font-size: 1em;
             margin-bottom: 1em;
 
             .label-text {
@@ -202,7 +202,7 @@
         }
 
         :global(.custom-button) {
-            padding: 6px 16px;
+            padding: 0.5rem 1.2rem;
             cursor: pointer;
             background-color: var(--theme-primary);
             border-radius: 8px;

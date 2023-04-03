@@ -42,13 +42,13 @@
 
     :global(.custom-button) {
         color: var(--theme-on-surface);
-        background-color: var(--theme-on-primary);
+        background-color: var(--theme-surface);
         border-color: transparent;
     }
 
     :global(.custom-button:hover) {
-        color: var(--theme-on-secondary);
-        background-color: var(--theme-secondary);
+        color: var(--theme-on-surface);
+        background-color: var(--theme-on-secondary);
         border-color: transparent;
     }
 </style>

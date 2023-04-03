@@ -1,5 +1,5 @@
-import './styles.css';
-import './global.scss';
+// import './styles.css';
+// import './global.scss';
 
 export { default as Button } from './components/Button.svelte'
 export { default as Alert } from './components/Alert.svelte'
