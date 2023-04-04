@@ -2,7 +2,6 @@
     import { Camera } from '@components/index'
     import { imgBase64ToBlob } from 'shared-utils'
     export let data: any
-    console.log('🚀 ~ file: +page.svelte:5 ~ data:', data)
 
     const capturePicture = async (picture: string) => {
         if (picture) {

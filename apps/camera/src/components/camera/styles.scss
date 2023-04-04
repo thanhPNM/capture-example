@@ -22,9 +22,10 @@
 
     :global(.capture-btn) {
         color: var(--theme-on-primary);
-        background-color: var(--theme-primary);
+        background-color: var(--theme-on-primary);
         border-color: transparent;
-        height: 100px;
+        height: 92px;
+        box-sizing: border-box;
     }
 
     canvas {

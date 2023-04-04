@@ -2,7 +2,13 @@
     import { goto } from '$app/navigation'
     import { Button } from 'ui'
 
+    import { useAppStore } from '../../store'
+
     export let data = { id: '', sessionInfo: null }
+
+    const { sessionStore } = useAppStore()
+
+    const { loading, initialData } = sessionStore.getters
 
     console.log('🚀 ~ file: +page.svelte:7 ~ sessionInfo:', data.sessionInfo)
 </script>
@@ -14,10 +20,13 @@
 
 <div class="capture-container">
     <h1>Capture UI 2.0</h1>
-    <Button
-        className="custom-button"
-        on:click={() => goto(`${data.id}/capture`)}>Start</Button
-    >
+    {#if $loading}<p>Loading session ...</p>{/if}
+    {#if $initialData}
+        <Button
+            className="custom-button"
+            on:click={() => goto(`${data.id}/capture`)}>Start</Button
+        >
+    {/if}
 </div>
 
 <style lang="scss">
@@ -33,11 +42,11 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        color: var(--theme-on-primary);
     }
     h1 {
         font-size: 1.5rem;
         margin: 2em;
-        color: var(--theme-on-primary);
     }
 
     :global(.custom-button) {

@@ -5,6 +5,8 @@
     import { hasGetUserMedia, polyfillGetUserMedia } from './utils'
     import type { ScreenshotFormatType, IScreenshotDimensions } from './models'
 
+    import CameraIcon from '@assets/icons/camera-icon.svg?component'
+
     const DEFAULT_CAMERA_CONSTRAINTS: MediaTrackConstraints = {
         facingMode: 'environment',
         width: 1920,
@@ -130,7 +132,7 @@
             className="capture-btn rounded-full"
             on:click={capturePicture}
         >
-            Capture
+            <CameraIcon height={48} width={48} />
         </Button>
     </div>
     <canvas

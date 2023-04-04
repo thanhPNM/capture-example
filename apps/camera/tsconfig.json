@@ -13,8 +13,11 @@
         "baseUrl": ".",
         "paths": {
             "src/*": ["src/*"],
+            "@assets/*": ["src/assets/*"],
             "@components/*": ["src/components/*"],
-            "@models/*": ["src/models/*"]
+            "@models/*": ["src/models/*"],
+            "@store": ["src/store/index.ts"],
+            "@store/*": ["src/store/*"]
         }
     }
 }
