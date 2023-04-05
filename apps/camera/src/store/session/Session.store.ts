@@ -17,7 +17,7 @@ export function useSessionsStore(): ISessionStore {
                     state.initialData = data
                     return state
                 })
-            }, 5000)
+            }, 2000)
             console.log('sessionsStore: getInitialData: state updated')
         },
         getProgess: async () => {

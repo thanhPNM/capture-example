@@ -4,16 +4,22 @@ import { useHttpClient, type IHttpRequestParams, HttpRequestType } from 'src/htt
 const CAPTURE_API_ENDPOINT = `${PUBLIC_URL_OPENAPI_HOST}/capture/`
 
 export const load = async ({ params }: { params: { sessionId: string } }) => {
-    const startRequestParams: IHttpRequestParams = {
-        endpoint: `${CAPTURE_API_ENDPOINT}${params.sessionId}/start`,
+    const startRequestParams: IHttpRequestParams<any> = {
+        endpoint: `${CAPTURE_API_ENDPOINT}[sessionId]/start`,
         requestType: HttpRequestType.put,
-        requiresToken: false
+        requiresToken: false,
+        payload: {
+            sessionId: params.sessionId
+        }
     }
 
-    const progressRequestParams: IHttpRequestParams = {
-        endpoint: `${CAPTURE_API_ENDPOINT}sessions/${params.sessionId}/progress`,
+    const progressRequestParams: IHttpRequestParams<any> = {
+        endpoint: `${CAPTURE_API_ENDPOINT}sessions/[sessionId]/progress`,
         requestType: HttpRequestType.get,
-        requiresToken: false
+        requiresToken: false,
+        payload: {
+            sessionId: params.sessionId
+        }
     }
 
     const data = await useHttpClient().request(startRequestParams)

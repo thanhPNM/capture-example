@@ -6,7 +6,7 @@ import { validateSessionId } from 'shared-utils';
 
 import { useAppStore } from '@store'
 
-const PATH_GET_INITIAL_DATA = `${PUBLIC_URL_OPENAPI_HOST}/capture/sessions/`
+const PATH_GET_INITIAL_DATA = `${PUBLIC_URL_OPENAPI_HOST}/capture/sessions/[sessionId]`
 
 export const load = async ({ params }: { params: { sessionId: string } }) => {
     if (!validateSessionId(params.sessionId)) {
@@ -17,13 +17,15 @@ export const load = async ({ params }: { params: { sessionId: string } }) => {
 
     const { sessionStore } = useAppStore()
 
-    const requestParams: IHttpRequestParams = {
-        endpoint: `${PATH_GET_INITIAL_DATA}${params.sessionId}`,
+    const requestParams: IHttpRequestParams<any> = {
+        endpoint: PATH_GET_INITIAL_DATA,
         requestType: HttpRequestType.get,
-        requiresToken: false
+        requiresToken: false,
+        payload: {
+            sessionId: params.sessionId
+        }
     }
     const res = await useHttpClient().request(requestParams) as any
-    console.log("🚀 ~ file: +page.ts:28 ~ load ~ res:", res)
     sessionStore.actions.getInitialData(res)
 
     if (res?.status === 404) {
