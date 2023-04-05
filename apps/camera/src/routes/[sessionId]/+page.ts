@@ -1,5 +1,6 @@
 import { error } from '@sveltejs/kit';
 import { PUBLIC_URL_OPENAPI_HOST } from '$env/static/public'
+import { useHttpClient, type IHttpRequestParams, HttpRequestType } from 'src/http-client'
 
 import { validateSessionId } from 'shared-utils';
 
@@ -16,19 +17,16 @@ export const load = async ({ params }: { params: { sessionId: string } }) => {
 
     const { sessionStore } = useAppStore()
 
-    let res = {} as any;
+    const requestParams: IHttpRequestParams = {
+        endpoint: `${PATH_GET_INITIAL_DATA}${params.sessionId}`,
+        requestType: HttpRequestType.get,
+        requiresToken: false
+    }
+    const res = await useHttpClient().request(requestParams) as any
+    console.log("🚀 ~ file: +page.ts:28 ~ load ~ res:", res)
+    sessionStore.actions.getInitialData(res)
 
-    await fetch(`${PATH_GET_INITIAL_DATA}${params.sessionId}`, {
-        method: 'GET',
-    })
-        .then(response => response.json())
-        .then(response => {
-            console.log("response -->", response)
-            res = response
-            sessionStore.actions.getInitialData(response)
-        })
-
-    if (res?.code === 404) {
+    if (res?.status === 404) {
         throw error(404, {
             message: res?.message ?? 'Not found'
         });

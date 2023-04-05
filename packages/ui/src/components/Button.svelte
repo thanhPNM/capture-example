@@ -6,9 +6,6 @@
     export let className: string = ''
     let restProps
     $: ({ type, className, ...restProps } = $$props)
-    console.log('🚀 ~ file: Button.svelte:9 ~ type:', type)
-    console.log('🚀 ~ file: Button.svelte:17 ~ restProps:', restProps)
-    console.log('🚀 ~ file: Button.svelte:16 ~ className:', className)
     let cls = classNames({
         btn: true,
         'btn-primary': type === 'primary',
