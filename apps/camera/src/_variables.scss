@@ -25,3 +25,13 @@ $theme-map-dark: (
     $--theme-on-secondary: #000,
     $--theme-on-surface: #f5f1f2,
 );
+
+$theme-map-capture: (
+    $--theme-primary: #27d089,
+    $--theme-secondary: #2e193e,
+    $--theme-surface: #fff,
+    $--theme-background: #fafafa,
+    $--theme-on-primary: #fff,
+    $--theme-on-secondary: #fff,
+    $--theme-on-surface: #000000,
+);

@@ -7,3 +7,6 @@
 :root.dark {
     @include spread-map($theme-map-dark);
 }
+:root.capture {
+    @include spread-map($theme-map-capture);
+}

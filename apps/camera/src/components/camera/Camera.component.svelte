@@ -114,7 +114,7 @@
             openVideoCamera()
         }
 
-        setTimeout(() => closeCamera(), 30000)
+        // setTimeout(() => closeCamera(), 30000)
     })
 </script>
 

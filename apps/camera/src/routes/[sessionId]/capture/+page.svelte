@@ -1,6 +1,9 @@
 <script lang="ts">
     import { Camera } from '@components/index'
     import { imgBase64ToBlob } from 'shared-utils'
+    import CameraLayout from 'src/components/layout/camera/CameraLayout.component.svelte'
+    import PAVELogo from '@assets/logos/logo.png'
+
     export let data: any
 
     const capturePicture = async (picture: string) => {
@@ -26,5 +29,7 @@
 </svelte:head>
 
 <div class="capture-container">
-    <Camera onCapture={capturePicture} {onUserMedia} />
+    <CameraLayout logoUrl={PAVELogo}>
+        <Camera onCapture={capturePicture} {onUserMedia} />
+    </CameraLayout>
 </div>
