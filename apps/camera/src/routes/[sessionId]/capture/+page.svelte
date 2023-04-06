@@ -1,20 +1,16 @@
 <script lang="ts">
-    import { Camera } from '@components/index'
     import { imgBase64ToBlob } from 'shared-utils'
-    import CameraLayout from 'src/components/layout/camera/CameraLayout.component.svelte'
-    import PAVELogo from '@assets/logos/logo.png'
-    import type { ISessionProgress } from 'src/models/sessions/Session.interface'
-    import { useAppStore } from '@store'
 
-    export const progress: ISessionProgress = {
-        session_key: '',
-        inspection_id: null,
-        status: '',
-        isReported: false,
-        photos: [],
-        passQC: false,
-        ttw: 0,
-    }
+    import { Camera } from '@components/index'
+    import CameraLayout from '@components/layout/camera/CameraLayout.component.svelte'
+    import PAVELogo from '@assets/logos/logo.png'
+    import type { IPhoto } from 'src/models/photos/Photo.interface'
+
+    import { apiClient } from '@api'
+    import { useAppStore } from '@store'
+    import type { PageData } from './$types'
+
+    export let data: PageData
 
     const { sessionStore } = useAppStore()
     const { startSessionApiResponse } = sessionStore.getters
@@ -22,10 +18,11 @@
     const capturePicture = async (picture: string) => {
         if (picture) {
             const imgBlob = await imgBase64ToBlob(picture)
-            console.log(
-                '🚀 ~ file: +page.svelte:10 ~ capturePicture ~ imgBlob:',
-                imgBlob
-            )
+            const uploadedPhoto: IPhoto = {
+                photo_code: '5',
+                image: imgBlob,
+            }
+            apiClient.photos.uploadPhoto(data.sessionId, uploadedPhoto)
         }
     }
 

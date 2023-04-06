@@ -1,4 +1,4 @@
 export interface IPhoto {
-    photo_code: number,
+    photo_code: string,
     image: Blob | null
 }

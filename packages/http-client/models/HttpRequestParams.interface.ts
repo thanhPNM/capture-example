@@ -8,11 +8,12 @@ import type { HttpRequestType } from "./Constants";
  * if the request should include an authentication token, and an optional payload (if POST or PUT for example)
  */
 
-export interface IHttpRequestParams<P = void> {
+export interface IHttpRequestParams<P = any> {
     requestType: HttpRequestType
     endpoint: string
     requiresToken: boolean
     headers?: { [key: string]: string }
+    pathParameters?: { [key: string]: string }
     payload?: P
     mockDelay?: number
 }

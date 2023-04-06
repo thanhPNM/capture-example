@@ -25,5 +25,5 @@ export interface IHttpClient {
      * The type P specify the type of payload if any
      * @returns A Promise<R> as the implementation of this method will be async.
      */
-    request<R, P = void>(parameters: IHttpRequestParams<P>): Promise<R>
+    request<R, P = any>(parameters: IHttpRequestParams<P>): Promise<R>
 }

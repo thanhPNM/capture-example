@@ -14,7 +14,7 @@ import { UrlUtils } from './UrlUtils'
  */
 export class HttpClientAxios implements IHttpClient {
     constructor () {
-
+        // OPTIONAL for now: Add request interceptor to handle errors or other things for each request in one place
     }
 
     /**
@@ -27,9 +27,9 @@ export class HttpClientAxios implements IHttpClient {
    * @returns A Promise<R> as the implementation of this method will be async.
    */
     async request<R, P = void>(parameters: IHttpRequestParams<P>): Promise<R> {
-        const { endpoint, requestType, requiresToken, headers, payload, mockDelay } = parameters
+        const { endpoint, requestType, requiresToken, headers, payload, pathParameters, mockDelay } = parameters
 
-        const fullUrl = UrlUtils.getFullUrlWithParams(endpoint, payload as any)
+        const fullUrl = UrlUtils.getFullUrlWithParams(endpoint, pathParameters as any)
 
         const options: AxiosRequestConfig = {
             headers: {},

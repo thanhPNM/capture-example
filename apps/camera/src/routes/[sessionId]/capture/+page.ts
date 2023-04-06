@@ -1,7 +1,9 @@
-import { apiClient } from 'src/api'
+import { apiClient } from '@api'
+import type { ISessionProgress } from '@models/sessions/Session.interface'
 
 export const load = async ({ params }: { params: { sessionId: string } }) => {
-    let progress: any
+    let progress: ISessionProgress | null = null;
+
     try {
         const res = await apiClient.session.fetchSessionProgress(params.sessionId)
         progress = res
@@ -13,5 +15,5 @@ export const load = async ({ params }: { params: { sessionId: string } }) => {
         }
     }
 
-    return { progress };
+    return { sessionId: params.sessionId, progress: progress };
 }

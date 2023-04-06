@@ -4,10 +4,11 @@
 
     import PAVELogo from '@assets/logos/logo.png'
 
-    import { apiClient } from 'src/api-client'
+    import { apiClient } from '@api'
     import { useAppStore } from '@store'
+    import type { PageData } from './$types'
 
-    export let data = { id: '', sessionInfo: null }
+    export let data: PageData
 
     const { sessionStore } = useAppStore()
 

@@ -1,6 +1,5 @@
-// file: src/api-client/models/ApiClient.interface.ts
-
 import type { ISessionApiClient } from './session'
+import type { IPhotosApiClient } from './photos'
 
 /**
  * @Name ApiClientInterface
@@ -9,4 +8,5 @@ import type { ISessionApiClient } from './session'
  */
 export interface IApiClient {
     session: ISessionApiClient
+    photos: IPhotosApiClient
 }

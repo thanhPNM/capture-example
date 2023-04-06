@@ -21,7 +21,7 @@ export class SessionApiClientModel implements ISessionApiClient {
             requestType: HttpRequestType.get,
             endpoint: this.endPoints.fetchInitialData,
             requiresToken: false,
-            payload: {
+            pathParameters: {
                 sessionId: sessionId
             }
         };
@@ -33,7 +33,7 @@ export class SessionApiClientModel implements ISessionApiClient {
             requestType: HttpRequestType.get,
             endpoint: this.endPoints.fetchSessionProgress,
             requiresToken: false,
-            payload: {
+            pathParameters: {
                 sessionId: sessionId
             }
         };
@@ -46,7 +46,7 @@ export class SessionApiClientModel implements ISessionApiClient {
             requestType: HttpRequestType.put,
             endpoint: this.endPoints.startSession,
             requiresToken: false,
-            payload: {
+            pathParameters: {
                 sessionId: sessionId
             }
         };
