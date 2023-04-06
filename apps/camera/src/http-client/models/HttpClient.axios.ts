@@ -9,10 +9,8 @@ import { UrlUtils } from './UrlUtils'
 /**
  * @name HttpClientAxios
  * @description
- * Wraps http client functionality to avoid directly using a third party npm package\
- like axios
- * and simplify replacement in the future if such npm package would stop being devel\
-oped or other reasons
+ * Wraps http client functionality to avoid directly using a third party npm package like axios
+ * and simplify replacement in the future if such npm package would stop being developed or other reasons
  */
 export class HttpClientAxios implements IHttpClient {
     constructor () {
@@ -54,6 +52,7 @@ export class HttpClientAxios implements IHttpClient {
             switch (requestType) {
                 default: {
                     console.warn('HttpClientAxios: invalid requestType argument or request type not implemented')
+                    break
                 }
                 case HttpRequestType.get: {
                     const response = await axios.get(fullUrl, options)

@@ -38,11 +38,11 @@ export class HttpClientFetch implements IHttpClient {
             }
         }
 
-        if (!options.headers?.hasOwnProperty('Content-Type')) {
+        if (!Object.prototype.hasOwnProperty.call(options.headers, 'Content-Type')) {
             options.headers = {
                 ...headers,
-                'Content-Type': HttpContentTypes.applicationJson
-            }
+                'Content-Type': 'application/json',
+            };
         }
 
         // set headers Authorization
@@ -65,6 +65,7 @@ export class HttpClientFetch implements IHttpClient {
             switch (requestType) {
                 default: {
                     console.warn('HttpClientFetch: invalid requestType argument or request type not implemented')
+                    break
                 }
                 case HttpRequestType.get: {
                     options.method = HttpRequestMethods.get
