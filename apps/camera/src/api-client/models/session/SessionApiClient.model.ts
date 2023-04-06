@@ -2,7 +2,7 @@ import type { SessionApiClientEndpoints, SessionApiClientOptions } from './Sessi
 import type { ISessionApiClient } from './SessionApiClient.interface'
 import type { ISession, ISessionProgress, ISessionStartApiResponse } from '@models/sessions/Session.interface'
 
-import { useHttpClient, type IHttpRequestParams, HttpRequestType } from 'src/http-client'
+import { useHttpClient, type IHttpRequestParams, HttpRequestType } from 'http-client'
 
 export class SessionApiClientModel implements ISessionApiClient {
     private readonly endPoints!: SessionApiClientEndpoints
