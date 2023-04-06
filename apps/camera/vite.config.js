@@ -6,9 +6,7 @@ import svg from '@poppanator/sveltekit-svg'
 /** @type {import('vite').UserConfig} */
 
 export default defineConfig(({ mode }) => {
-    console.log('🚀 ~ file: vite.config.js:20 ~ defineConfig ~ mode:', mode)
     const env = loadEnv(mode, process.cwd(), '')
-    console.log('🚀 ~ file: vite.config.js:10 ~ defineConfig ~ env:', env)
     return {
         plugins: [sveltekit(), tsconfigPaths(), svg()],
         server: {

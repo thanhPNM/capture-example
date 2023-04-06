@@ -1,29 +1,17 @@
-import { PUBLIC_URL_OPENAPI_HOST } from '$env/static/public'
-import { useHttpClient, type IHttpRequestParams, HttpRequestType } from 'src/http-client'
-
-const CAPTURE_API_ENDPOINT = `${PUBLIC_URL_OPENAPI_HOST}/capture/`
+import { apiClient } from 'src/api-client'
 
 export const load = async ({ params }: { params: { sessionId: string } }) => {
-    const startRequestParams: IHttpRequestParams<any> = {
-        endpoint: `${CAPTURE_API_ENDPOINT}[sessionId]/start`,
-        requestType: HttpRequestType.put,
-        requiresToken: false,
-        payload: {
-            sessionId: params.sessionId
+    let progress: any
+    try {
+        const res = await apiClient.session.fetchSessionProgress(params.sessionId)
+        progress = res
+    } catch (error: any) {
+        if (error?.status === 404) {
+            throw error(404, {
+                message: error?.message ?? 'Not found'
+            });
         }
     }
 
-    const progressRequestParams: IHttpRequestParams<any> = {
-        endpoint: `${CAPTURE_API_ENDPOINT}sessions/[sessionId]/progress`,
-        requestType: HttpRequestType.get,
-        requiresToken: false,
-        payload: {
-            sessionId: params.sessionId
-        }
-    }
-
-    const data = await useHttpClient().request(startRequestParams)
-    const progress = await useHttpClient().request(progressRequestParams)
-
-    return { data, progress };
+    return { progress };
 }

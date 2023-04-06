@@ -1,0 +1,53 @@
+{
+    "inspectionID": "PAV-230404104611-130",
+    "sessionID": "TQC-MXWNNWZURJ",
+    "status": "inspecting",
+    "ttw": 137,
+    "isDecode": true,
+    "passQC": false,
+    "photos": {
+        "skip": [],
+        "url": {
+            "01": {
+                "original": "https://inspections-dev.paveapi.com/PAV-230404104611-130/01/01-original_ACCEPT_279016.jpg"
+            },
+            "02": {
+                "original": "https://inspections-dev.paveapi.com/PAV-230404104611-130/02/02-original_ACCEPT_279017.jpg"
+            },
+            "03": {
+                "original": "https://inspections-dev.paveapi.com/PAV-230404104611-130/03/03-original_ACCEPT_279181.jpg"
+            }
+        },
+        "missing": ["04", "05", "06", "07", "08", "09", "10", "11", "12", "13"],
+        "qc": [],
+        "rejected": [],
+        "inspect": [],
+        "finished": [
+            {
+                "photoCode": "01",
+                "status": "FINISHED",
+                "message": {
+                    "accepted": "Image Passes QC"
+                },
+                "rejectedCount": 0
+            },
+            {
+                "photoCode": "02",
+                "status": "FINISHED",
+                "message": {
+                    "accepted": "Image Passes QC"
+                },
+                "rejectedCount": 0
+            },
+            {
+                "photoCode": "03",
+                "status": "FINISHED",
+                "message": {
+                    "accepted": "Image Passes QC"
+                },
+                "rejectedCount": 0
+            }
+        ]
+    },
+    "user_photos": []
+}

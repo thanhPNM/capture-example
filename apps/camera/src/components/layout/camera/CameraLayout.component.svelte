@@ -2,10 +2,6 @@
     import { CameraCorner } from 'ui'
 
     export let logoUrl: string = ''
-    console.log(
-        '🚀 ~ file: CameraLayout.component.svelte:5 ~ logoUrl:',
-        logoUrl
-    )
 
     const CORNERS = ['topLeft', 'topRight', 'bottomRight', 'bottomLeft']
 </script>

@@ -32,7 +32,6 @@ export class HttpClientAxios implements IHttpClient {
         const { endpoint, requestType, requiresToken, headers, payload, mockDelay } = parameters
 
         const fullUrl = UrlUtils.getFullUrlWithParams(endpoint, payload as any)
-        console.log("🚀 ~ file: HttpClient.axios.ts:35 ~ HttpClientAxios ~ fullUrl:", fullUrl, payload)
 
         const options: AxiosRequestConfig = {
             headers: {},

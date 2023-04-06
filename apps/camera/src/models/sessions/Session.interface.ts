@@ -69,3 +69,14 @@ export interface ISessionProgress {
     passQC: boolean,
     ttw: number
 }
+
+export interface ISessionStartApiResponse {
+    session_key: string,
+    inspection_id: string,
+    theme: string,
+    active: number,
+    status: string,
+    redirect_url: string,
+    created_at: string,
+    updated_at: string,
+}

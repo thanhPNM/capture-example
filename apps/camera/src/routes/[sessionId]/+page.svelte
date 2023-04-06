@@ -1,9 +1,11 @@
 <script lang="ts">
     import { goto } from '$app/navigation'
     import { Button } from 'ui'
+
     import PAVELogo from '@assets/logos/logo.png'
 
-    import { useAppStore } from '../../store'
+    import { apiClient } from 'src/api-client'
+    import { useAppStore } from '@store'
 
     export let data = { id: '', sessionInfo: null }
 
@@ -11,7 +13,11 @@
 
     const { loading, initialData } = sessionStore.getters
 
-    console.log('🚀 ~ file: +page.svelte:7 ~ sessionInfo:', data.sessionInfo)
+    const onClickGetStarted = async () => {
+        const res = await apiClient.session.startSesson(data.id)
+        await sessionStore.actions.startSession(res)
+        goto(`${data.id}/capture`)
+    }
 </script>
 
 <svelte:head>
@@ -29,9 +35,8 @@
             {#if $loading}<p>Loading session ...</p>{/if}
         </div>
         {#if $initialData}
-            <Button
-                className="custom-button"
-                on:click={() => goto(`${data.id}/capture`)}>GET STARTED</Button
+            <Button className="custom-button" on:click={onClickGetStarted}
+                >GET STARTED</Button
             >
         {/if}
     </div>

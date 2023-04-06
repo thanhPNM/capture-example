@@ -25,7 +25,6 @@ export class HttpClientFetch implements IHttpClient {
         const { endpoint, requestType, requiresToken, headers, payload, mockDelay } = parameters
 
         const fullUrl = UrlUtils.getFullUrlWithParams(endpoint, payload as any)
-        console.log("🚀 ~ file: HttpClient.fetch.ts:28 ~ HttpClientFetch ~ fullUrl:", fullUrl)
 
         const options: RequestInit = {
             headers: {},

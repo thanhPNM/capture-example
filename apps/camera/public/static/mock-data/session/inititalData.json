@@ -1,0 +1,39 @@
+{
+    "session_key": "TQC-MXWNNWZURJ",
+    "theme": "INSPECT",
+    "active": true,
+    "status": "PROCESS",
+    "redirect_url": "https://paveapi.com",
+    "inspect_started_at": "2023-04-04T10:46:11+00:00",
+    "inspect_ended_at": null,
+    "capture_duration": null,
+    "created_at": "2023-04-04T10:44:14+00:00",
+    "updated_at": "2023-04-05T04:15:09+00:00",
+    "language": "en",
+    "region": "VN",
+    "languages": [
+        {
+            "iso": "en",
+            "language_code": "en_us",
+            "label": "English"
+        },
+        {
+            "iso": "fr",
+            "language_code": "fr_ca",
+            "label": "Français"
+        }
+    ],
+    "branding": {
+        "logo": "https://dashboard-dev.paveapi.com/uploads/UID_4/branding_logo_Lo8SgKMMPl.jpg",
+        "logo_light": "https://dashboard-dev.paveapi.com/uploads/UID_4/branding_logo_light_FlUyMl3uQo.jpg",
+        "bg_color": "#3EB489",
+        "bg_text_color": "#3EB489",
+        "logo_light_primary": false,
+        "bgColor": "#3EB489",
+        "bgTextColor": "#3EB489",
+        "videos": {
+            "default": "https://www.youtube.com/watch?v=da5x-__kvGY"
+        }
+    },
+    "access_token": "eyJpdiI6IjA2eFZMRVlQcUZqOFEzZ1pBK2JxOFE9PSIsInZhbHVlIjoicmhObHVjd3BEdCtYUG5aemRIRkpTdz09IiwibWFjIjoiZmY5MWE1NWI5NjAyNDM5YTg2NWQ0ZDg2ODU0NDhlZWQ2ZjA0M2FmZjk1ZDkzYjcyZTJjYTFmYTVhOWJjZWQ2NiIsInRhZyI6IiJ9"
+}
