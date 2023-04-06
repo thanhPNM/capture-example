@@ -1,4 +1,4 @@
-import { apiClient } from 'src/api-client'
+import { apiClient } from 'src/api'
 
 export const load = async ({ params }: { params: { sessionId: string } }) => {
     let progress: any

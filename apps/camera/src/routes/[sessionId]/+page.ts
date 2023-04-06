@@ -1,7 +1,7 @@
 import { error } from '@sveltejs/kit';
 import { validateSessionId } from 'shared-utils';
 
-import { apiClient } from 'src/api-client'
+import { apiClient } from 'src/api'
 import { useAppStore } from '@store'
 
 export const load = async ({ params }: { params: { sessionId: string } }) => {
