@@ -4,29 +4,28 @@
 
     import { hasGetUserMedia, polyfillGetUserMedia } from './utils'
     import type { ScreenshotFormatType, IScreenshotDimensions } from './models'
-
+    import {
+        CameraConstraintResolution,
+        screenshotFormat as defaultScreenshotFormat,
+        screenshotQuality as defaultScreenshotQuality,
+    } from './models'
     import CameraIcon from '@assets/icons/camera-icon.svg?component'
-
-    const DEFAULT_CAMERA_CONSTRAINTS: MediaTrackConstraints = {
-        facingMode: 'environment',
-        width: 1920,
-        height: 1080,
-    }
 
     //props
     export const cameraConstraints: MediaTrackConstraints =
-        DEFAULT_CAMERA_CONSTRAINTS
+        CameraConstraintResolution.Default
     export const startOnMount: boolean = true
     export const mirrored: boolean = true
-    export const screenshotFormat: ScreenshotFormatType = 'image/jpeg'
-    export const screenshotQuality: number = 0.92
+    export const screenshotFormat: ScreenshotFormatType =
+        defaultScreenshotFormat
+    export const screenshotQuality: number = defaultScreenshotQuality
 
     export let onUserMedia: (stream: MediaStream) => void
     export let onCapture: (picture: any) => void
 
     let screenshotDimensions: IScreenshotDimensions = {
         width: cameraConstraints.width as number,
-        height: cameraConstraints.width as number,
+        height: cameraConstraints.height as number,
     }
 
     let videoSource: any = null
@@ -49,18 +48,16 @@
             isRunning = true
             onUserMedia(stream)
         } catch (error) {
-            console.log(error)
+            console.warn(error)
         }
     }
 
-    const closeCamera = () => {
-        console.log(isRunning)
+    export const closeCamera = () => {
         if (!isRunning) {
             return false
         }
 
         stream?.getTracks().forEach((track: any) => {
-            console.log(track)
             stream?.removeTrack(track)
             if (track.readyState == 'live' && track.kind === 'video') {
                 track.stop()
@@ -109,12 +106,12 @@
             console.error('getUserMedia not supported')
             return
         }
-        console.log(screen)
+        console.info(screen)
         if (startOnMount) {
             openVideoCamera()
         }
 
-        // setTimeout(() => closeCamera(), 30000)
+        closeCamera()
     })
 </script>
 

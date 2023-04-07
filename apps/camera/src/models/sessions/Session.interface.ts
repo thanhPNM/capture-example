@@ -1,4 +1,6 @@
-export interface ISession {
+import type { IProcessingPhoto } from "../photos/Photo.interface"
+
+export interface ISessionInitialData {
     session_key: string,
     theme: string,
     active: boolean,
@@ -61,13 +63,25 @@ export interface ICustomizedSession {
 }
 
 export interface ISessionProgress {
-    session_key: string,
-    inspection_id: string | null,
+    sessionID: string,
+    inspectionID: string | null,
     status: string,
-    isReported: boolean,
-    photos: [],
-    passQC: boolean,
     ttw: number
+    isDecode: boolean,
+    isReported: boolean,
+    passQC: boolean,
+    photos: ISessionProgressPhoto,
+    user_photos: any
+}
+
+export interface ISessionProgressPhoto {
+    finished: IProcessingPhoto[],
+    inspect: IProcessingPhoto[],
+    missing: string[],
+    qc: string[],
+    reject: string[],
+    skip: string[],
+    url: { [key: string]: { original: string } }
 }
 
 export interface ISessionStartApiResponse {

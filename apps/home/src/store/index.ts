@@ -1,8 +1,8 @@
 import { writable } from 'svelte/store';
 
-export interface ISession {
+export interface ISessionInitialData {
     id: string;
     active: boolean;
 }
 
-export const sessions = writable<ISession[]>([]);
+export const sessions = writable<ISessionInitialData[]>([]);

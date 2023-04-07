@@ -4,7 +4,7 @@ import { validateSessionId } from 'shared-utils';
 import { apiClient } from 'src/api'
 import { useAppStore } from '@store'
 
-export const load = async ({ params }: { params: { sessionId: string } }) => {
+export const load = async ({ fetch, params }: { fetch: any, params: { sessionId: string } }) => {
     if (!validateSessionId(params.sessionId)) {
         throw error(404, {
             message: 'Not found'

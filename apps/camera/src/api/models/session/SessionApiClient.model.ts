@@ -1,6 +1,6 @@
 import type { SessionApiClientEndpoints, SessionApiClientOptions } from './SessionApiClientOptions.interface'
 import type { ISessionApiClient } from './SessionApiClient.interface'
-import type { ISession, ISessionProgress, ISessionStartApiResponse } from '@models/sessions/Session.interface'
+import type { ISessionInitialData, ISessionProgress, ISessionStartApiResponse } from '@models/sessions/Session.interface'
 
 import { useHttpClient, type IHttpRequestParams, HttpRequestType } from 'http-client'
 
@@ -9,14 +9,13 @@ export class SessionApiClientModel implements ISessionApiClient {
     private readonly mockDelay: number = 0
 
     constructor (options: SessionApiClientOptions) {
-        console.log("🚀 ~ file: SessionApiClient.model.ts:12 ~ SessionApiClientModel ~ constructor ~ options:", options)
         this.endPoints = options.endpoints
         if (options.mockDelay) {
             this.mockDelay = options.mockDelay
         }
     }
 
-    fetchInitialData(sessionId: string): Promise<ISession> {
+    fetchInitialData(sessionId: string): Promise<ISessionInitialData> {
         const requestParams: IHttpRequestParams<{ sessionId: string }> = {
             requestType: HttpRequestType.get,
             endpoint: this.endPoints.fetchInitialData,

@@ -4,8 +4,8 @@ import { SessionApiClientModel, type ISessionApiClient, type SessionApiClientOpt
 const options: SessionApiClientOptions = {
     endpoints: {
         fetchInitialData: '/initialData.json',
-        fetchSessionProgress: 'static/mock-data/session/progress.json',
-        startSession: 'static/mock-data/session/getStarted.json'
+        fetchSessionProgress: '/progress.json',
+        startSession: '/getStarted.json'
     },
     mockDelay: 300
 }

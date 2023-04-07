@@ -1,4 +1,4 @@
-import type { ISession, ISessionProgress, ISessionStartApiResponse } from '@models/sessions/Session.interface'
+import type { ISessionInitialData, ISessionProgress, ISessionStartApiResponse } from '@models/sessions/Session.interface'
 
 /**
  * @Name ISessionApiClient
@@ -6,7 +6,7 @@ import type { ISession, ISessionProgress, ISessionStartApiResponse } from '@mode
  * Interface for the Session api client module
  */
 export interface ISessionApiClient {
-    fetchInitialData: (sessionId: string) => Promise<ISession>,
+    fetchInitialData: (sessionId: string) => Promise<ISessionInitialData>,
     fetchSessionProgress: (sessionId: string) => Promise<ISessionProgress>,
     startSesson: (sessionId: string) => Promise<ISessionStartApiResponse>
 }

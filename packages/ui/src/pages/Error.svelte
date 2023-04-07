@@ -2,7 +2,6 @@
     export let page
     export let canGoBack: boolean = true
 
-    console.log($page)
     const DEFAULT_MESSAGE: string =
         'This boat is broken! Wait a minute, our cool crew is fixing it'
     const errorContents = {

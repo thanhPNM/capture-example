@@ -23,6 +23,7 @@
 <style lang="scss">
     .camera-layout-wrapper {
         position: relative;
+        flex-grow: 1;
     }
 
     .logo-wrapper {
