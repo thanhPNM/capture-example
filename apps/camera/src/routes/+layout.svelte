@@ -1,21 +1,24 @@
 <script>
     import 'src/app.postcss'
     import 'src/global.scss'
+
+    import { isMobileBrowser } from 'shared-utils'
+    import { Unsupported } from 'ui'
 </script>
 
-<div class="wrapper">
-    <slot />
-</div>
+{#if isMobileBrowser()}
+    <div class="wrapper">
+        <slot />
+    </div>
+{:else}
+    <Unsupported />
+{/if}
 
 <style lang="scss">
     .wrapper {
         height: 100vh;
         display: flex;
         flex-direction: column;
-        background-image: linear-gradient(
-            to bottom right,
-            var(--theme-secondary),
-            var(--theme-primary)
-        );
+        background-color: var(--theme-secondary);
     }
 </style>

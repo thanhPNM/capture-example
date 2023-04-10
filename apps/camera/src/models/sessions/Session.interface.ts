@@ -94,3 +94,17 @@ export interface ISessionStartApiResponse {
     created_at: string,
     updated_at: string,
 }
+
+// export interface ISessionCapturePhotoOption {
+
+// }
+
+export interface ISessionCaptureFlow {
+    code: number,
+    required: boolean,
+    label: string,
+    caption: string,
+    outline: string,
+    captureMode: string,
+    options: any
+}

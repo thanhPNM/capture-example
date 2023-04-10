@@ -1,4 +1,4 @@
-import type { ISessionInitialData, ISessionProgress, ISessionStartApiResponse } from '@models/sessions/Session.interface'
+import type { ISessionInitialData, ISessionProgress, ISessionStartApiResponse, ISessionCaptureFlow } from '@models/sessions/Session.interface'
 
 /**
  * @Name ISessionApiClient
@@ -8,5 +8,6 @@ import type { ISessionInitialData, ISessionProgress, ISessionStartApiResponse } 
 export interface ISessionApiClient {
     fetchInitialData: (sessionId: string) => Promise<ISessionInitialData>,
     fetchSessionProgress: (sessionId: string) => Promise<ISessionProgress>,
-    startSesson: (sessionId: string) => Promise<ISessionStartApiResponse>
+    startSesson: (sessionId: string) => Promise<ISessionStartApiResponse>,
+    fetchCaptureFlow: (sessionId: string) => Promise<ISessionCaptureFlow>
 }

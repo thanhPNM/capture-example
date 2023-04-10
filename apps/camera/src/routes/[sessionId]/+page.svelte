@@ -14,6 +14,8 @@
 
     const { loading, initialData } = sessionStore.getters
 
+    console.log(data)
+
     const onClickGetStarted = async () => {
         const res = await apiClient.session.startSesson(data.id)
         await sessionStore.actions.startSession(res)
@@ -35,7 +37,7 @@
             <h1>Capture UI 2.0</h1>
             {#if $loading}<p>Loading session ...</p>{/if}
         </div>
-        {#if $initialData}
+        {#if data.sessionInfo}
             <Button className="custom-button" on:click={onClickGetStarted}
                 >GET STARTED</Button
             >
@@ -45,11 +47,6 @@
 
 <style lang="scss">
     .capture-container {
-        background-image: linear-gradient(
-            to bottom right,
-            var(--theme-secondary),
-            var(--theme-primary)
-        );
         display: flex;
         flex-direction: column;
         flex: 1;

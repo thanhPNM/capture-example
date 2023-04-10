@@ -1,4 +1,4 @@
-# Capture Demo Example
+# Capture Svelte Example
 
 This project is a simple demo of how to CRUD session and capture image using the Web APIs MediaDevices in a Svelte application.
 
@@ -12,9 +12,10 @@ This Turborepo includes the following packages/apps:
 -   `camera`: another [svelte-kit](https://kit.svelte.dev/) app
 -   `workshop`: used to show Storybook for all component in `packages/ui`
 -   `ui`: a stub Svelte component library shared by both `web` and `docs` applications
+-   `http-client`: a container used to calling remote API
+-   `shared-utils`: a shared utils between apps
 -   `config`: `postcss` and `tailwind` configurations
 -   `eslint-config-custom`: `eslint` configurations (includes `eslint-plugin-svelte` and `eslint-config-prettier`)
--   `shared-utils`: a shared utils between apps
 
 Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
 
@@ -62,9 +63,12 @@ capture-demo-example/
 │ ├── config
 │ ├── eslint-config-custom
 │ ├── ui/
-│ │ ├── Button.svelte
+│ │ ├── components
+│ │ │ ├── Button.svelte
+│ │ ├── pages
 │ │ └── ...
 │ └── shared-utils
+│ └── http-client
 ├── package.json
 ├── turbo.json
 └── ...
@@ -77,8 +81,3 @@ Follow [this instruction](https://turbo.build/repo/docs/handbook/workspaces) if 
 ## Authors
 
 -   Thanh Pham
-
-## Acknowledgments
-
--   This project was created as a demo for TurboRepo.
--   Feel free to customize this README to fit your specific project needs. Good luck with your Svelte project!

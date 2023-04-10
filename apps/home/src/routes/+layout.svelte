@@ -30,11 +30,7 @@
         height: 100vh;
         display: flex;
         flex-direction: column;
-        background-image: linear-gradient(
-            to bottom right,
-            var(--theme-secondary),
-            var(--theme-primary)
-        );
+        background-color: var(--theme-secondary);
         padding: 8px;
     }
 </style>

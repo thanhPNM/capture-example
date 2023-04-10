@@ -5,7 +5,8 @@
 export interface SessionApiClientEndpoints {
     fetchInitialData: string,
     fetchSessionProgress: string,
-    startSession: string
+    startSession: string,
+    fetchCaptureFlow: string
 }
 
 /**
